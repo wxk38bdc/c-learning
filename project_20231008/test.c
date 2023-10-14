@@ -340,29 +340,52 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	char arr[101] = { 0 };
+//	scanf("%s", arr);
+//	int len = strlen(arr);
+//	int right= len - 1;
+//	int left = 0;
+//	int flag = 0;
+//	while (left < right)
+//	{
+//		if (arr[left] != arr[right])
+//		{
+//			flag = 1;
+//			break;
+//		}
+//		left++;
+//		right--;
+//	}
+//	if(flag== 0)
+//		printf("yes");
+//	else
+//		printf("no");
+//	return 0;
+//}
+
 #include <stdio.h>
 #include <string.h>
 int main()
 {
-	char arr[101] = { 0 };
-	scanf("%s", arr);
-	int len = strlen(arr);
-	int right= len - 1;
-	int left = 0;
-	int flag = 0;
-	while (left < right)
+	int n = 0;
+	scanf("%d", &n);
+	int sum = 0;
+	for (int j = 2; j <= n; j++)
 	{
-		if (arr[left] != arr[right])
+		for (int i = 1; i < j; i++)
 		{
-			flag = 1;
-			break;
+			if (j % i == 0)
+			{
+				sum += i;
+			}
 		}
-		left++;
-		right--;
+		if (sum == j)
+		{
+			printf("%d\n", j);
+		}
+		sum = 0;
 	}
-	if(flag== 0)
-		printf("yes");
-	else
-		printf("no");
 	return 0;
 }
