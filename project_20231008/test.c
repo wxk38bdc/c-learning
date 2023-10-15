@@ -742,3 +742,236 @@
 //    return 0;
 //}
 
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//#define MAX_N 20
+//#define MAX_M 20
+//
+//int main() {
+//    int n, m, horseX, horseY;
+//    scanf("%d %d %d %d", &n, &m, &horseX, &horseY);
+//
+//    long long paths[MAX_N + 1][MAX_M + 1] = { 0 };
+//    int i, j;
+//
+//    // 初始位置
+//    paths[0][0] = 1;
+//
+//    // 计算路径
+//    for (i = 0; i <= n; i++) {
+//        for (j = 0; j <= m; j++) {
+//            if (i > 0 && (i - 1 != horseX || j != horseY)) {
+//                paths[i][j] += paths[i - 1][j];
+//            }
+//            if (j > 0 && (i != horseX || j - 1 != horseY)) {
+//                paths[i][j] += paths[i][j - 1];
+//            }
+//        }
+//    }
+//
+//    // 马可能跳跃到的点
+//    int horseJumpX[] = { -1, -1, 1, 1, -2, -2, 2, 2 };
+//    int horseJumpY[] = { -2, 2, -2, 2, -1, 1, -1, 1 };
+//
+//    // 阻止路径经过马的位置和马可能跳跃到的位置
+//    for (i = 0; i < 8; i++) {
+//        int x = horseX + horseJumpX[i];
+//        int y = horseY + horseJumpY[i];
+//        if (x >= 0 && x <= n && y >= 0 && y <= m) {
+//            paths[x][y] = 0;
+//        }
+//    }
+//
+//    printf("%lld\n", paths[n][m]);
+//    return 0;
+//}
+
+//int get_max(int*arr, int len)
+//{
+//	int max = arr[0];
+//	for (int i = 1; i < len; i++)
+//	{
+//		if (arr[i] > max)
+//			max = arr[i];
+//	}
+//	return max;
+//}
+//int main()
+//{
+//	int a, b, c;
+//	scanf("%d %d %d", &a, &b, &c);
+//	int arr1[3] = { a, b, c };
+//	int arr2[3] = { a+b, c, b };
+//	int arr3[3] = { b, a, b+c };
+//	int len = 3;
+//	double m=get_max(arr1, 3)*1.0/(get_max(arr2, 3)*get_max(arr3, 3));
+//	printf("%.3lf", m);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int n, i, j;//i为我家门牌号，j为总共有多少家
+//	scanf("%d", &n);
+//	for (j = 1;; j++)
+//	{
+//		for (i = 1; i <= j; i++)
+//		{
+//			if((1+j)*j/2-3*i==n)
+//			{
+//				printf("%d %d",i,j);
+//				return 0;
+//			}
+//		}
+//	}
+//}
+
+//#include<stdio.h>
+////确定进制
+//int main()
+//{
+//	int p, q, r;
+//	scanf("%d %d %d", &p, &q, &r);
+//	int flag = 0;
+//	for (int i = 2; i <= 16; i++)
+//	{
+//
+//	}
+//	if (flag == 0)
+//	{
+//		printf("0");
+//	}
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <math.h>
+//int decimalToBase(int decimal, int base) {
+//    int result = 0;
+//    int multiplier = 1;
+//
+//    while (decimal > 0) {
+//        int remainder = decimal % base;
+//        result += remainder * multiplier;
+//        decimal /= base;
+//        multiplier *= 10;
+//    }
+//
+//    return result;
+//}
+//int baseToDecimal(const char* number, int base) {
+//    int result = 0;
+//    int length = strlen(number);
+//
+//    for (int i = 0; i < length; i++) {
+//        char digit = number[i];
+//        int value = (digit >= '0' && digit <= '9') ? (digit - '0') : (digit - 'A' + 10);
+//        if (value >= base) {
+//            printf("无效的数字：%c\n", digit);
+//            return -1;
+//        }
+//        result = result * base + value;
+//    }
+//
+//    return result;
+//}
+//
+//int main() {
+//    int p, q, r;
+//    scanf("%d %d %d", &p, &q, &r);
+//
+//    //int result = decimalToBase(decimal, base);//转换结果 十进制数 目标进制
+//
+//    int flag = 0;
+//    for (int i = 2; i <= 16; i++)
+//    {
+//
+//        char number[32] = { 0 };
+//        scanf("%s %d", number,&i);
+//        int pBase = baseToDecimal(p, i);
+//       // number[32] = { 0 };
+//        scanf("%s %d", number, &i);
+//		int qBase = baseToDecimal(q, i);
+//       // number[32] = { 0 };
+//        scanf("%s %d", number, &i);
+//		int rBase = baseToDecimal(r, i);
+//
+//		if (pBase * qBase == rBase)
+//		{
+//			printf("%d", i);
+//			flag = 1;
+//			break;
+//		}
+//    }
+//    if (flag == 0)
+//    {
+//    	printf("0");
+//    }
+//    return 0;
+//}
+
+//#include <stdio.h>
+////#include <math.h>
+//int main()
+//{
+//	int x;
+//	char a, b;
+//	scanf("%c %c", &a, &b);
+//	scanf("%d", &x);
+//	int i = 0;
+//	for (i = 0; i * i <= x; i++)
+//	{
+//		;
+//	}
+//	printf("%d", i - 1);
+//
+//	return 0;
+//}
+
+#include <stdio.h>
+
+int mySqrt(int x);
+
+int main() {
+    int x;
+    scanf("%d", &x);
+
+    int result = mySqrt(x);
+
+    printf("x 的平方根为: %d\n", result);
+
+    return 0;
+}
+
+int mySqrt(int x) {
+    if (x <= 1) {
+        return x;
+    }
+
+    long left = 1;
+    long right = x;
+    while (left <= right) {
+        long mid = left + (right - left) / 2;
+        long square = mid * mid;
+        if (square == x) {
+            return (int)mid;
+        }
+        else if (square < x) {
+            left = mid + 1;
+        }
+        else {
+            right = mid - 1;
+        }
+    }
+
+    return (int)right;
+}
+
+
+
+
+
+
+
+
