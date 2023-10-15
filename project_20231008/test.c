@@ -365,27 +365,380 @@
 //	return 0;
 //}
 
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	int n = 0;
-	scanf("%d", &n);
-	int sum = 0;
-	for (int j = 2; j <= n; j++)
-	{
-		for (int i = 1; i < j; i++)
-		{
-			if (j % i == 0)
-			{
-				sum += i;
-			}
-		}
-		if (sum == j)
-		{
-			printf("%d\n", j);
-		}
-		sum = 0;
-	}
-	return 0;
-}
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int sum = 0;
+//	for (int j = 2; j <= n; j++)
+//	{
+//		for (int i = 1; i < j; i++)
+//		{
+//			if (j % i == 0)
+//			{
+//				sum += i;
+//			}
+//		}
+//		if (sum == j)
+//		{
+//			printf("%d\n", j);
+//		}
+//		sum = 0;
+//	}
+//	return 0;
+//}
+
+//#include <stdio.h>
+//
+//#define MAX_ROWS 10
+//#define MAX_COLS 10
+//
+//int main() {
+//    int row1, col1, row2, col2;
+//
+//    printf("输入第一个矩阵的行数和列数: ");
+//    scanf("%d %d", &row1, &col1);
+//
+//    printf("输入第二个矩阵的行数和列数: ");
+//    scanf("%d %d", &row2, &col2);
+//
+//    if (col1 != row2) {
+//        printf("矩阵无法相乘。\n");
+//        return 1;
+//    }
+//
+//    if (row1 > MAX_ROWS || col1 > MAX_COLS || row2 > MAX_ROWS || col2 > MAX_COLS) {
+//        printf("行数和列数必须小于等于 %d。\n", MAX_ROWS);
+//        return 1;
+//    }
+//
+//    int matrix1[MAX_ROWS][MAX_COLS], matrix2[MAX_ROWS][MAX_COLS], result[MAX_ROWS][MAX_COLS];
+//
+//    printf("输入第一个矩阵的元素:\n");
+//    for (int i = 0; i < row1; i++) {
+//        for (int j = 0; j < col1; j++) {
+//            scanf("%d", &matrix1[i][j]);
+//        }
+//    }
+//
+//    printf("输入第二个矩阵的元素:\n");
+//    for (int i = 0; i < row2; i++) {
+//        for (int j = 0; j < col2; j++) {
+//            scanf("%d", &matrix2[i][j]);
+//        }
+//    }
+//
+//    // 执行矩阵乘法
+//    for (int i = 0; i < row1; i++) {
+//        for (int j = 0; j < col2; j++) {
+//            result[i][j] = 0;
+//            for (int k = 0; k < col1; k++) {
+//                result[i][j] += matrix1[i][k] * matrix2[k][j];
+//            }
+//        }
+//    }
+//
+//    // 输出乘法结果
+//    printf("矩阵乘法的结果:\n");
+//    for (int i = 0; i < row1; i++) {
+//        for (int j = 0; j < col2; j++) {
+//            printf("%d ", result[i][j]);
+//        }
+//        printf("\n");
+//    }
+//
+//    return 0;
+//}
+
+//#include <stdio.h>
+////矩阵乘法
+//#define MAX_ROWS 10
+//#define MAX_COLS 10
+//int main() {
+//    begin:
+//    int row1, col1, row2, col2;
+//
+//    printf("输入第一个矩阵的行数和列数: ");
+//    scanf("%d %d", &row1, &col1);
+//
+//    printf("输入第二个矩阵的行数和列数: ");
+//    scanf("%d %d", &row2, &col2);
+//
+//    if (col1 != row2) {
+//        printf("矩阵无法相乘。\n");
+//        printf("请重新输入\n");
+//        goto begin;
+//    }
+//
+//    if (row1 > MAX_ROWS || col1 > MAX_COLS || row2 > MAX_ROWS || col2 > MAX_COLS) {
+//        printf("行数和列数必须小于等于 %d。\n", MAX_ROWS);
+//        printf("请重新输入\n");
+//        goto begin;
+//    }
+//
+//    float matrix1[MAX_ROWS][MAX_COLS], matrix2[MAX_ROWS][MAX_COLS], result[MAX_ROWS][MAX_COLS];
+//
+//    printf("输入第一个矩阵的元素:\n");
+//    for (int i = 0; i < row1; i++) {
+//        for (int j = 0; j < col1; j++) {
+//            scanf("%f", &matrix1[i][j]);
+//        }
+//    }
+//
+//    printf("输入第二个矩阵的元素:\n");
+//    for (int i = 0; i < row2; i++) {
+//        for (int j = 0; j < col2; j++) {
+//            scanf("%f", &matrix2[i][j]);
+//        }
+//    }
+//
+//    // 执行矩阵乘法
+//    for (int i = 0; i < row1; i++) {
+//        for (int j = 0; j < col2; j++) {
+//            result[i][j] = 0.0;
+//            for (int k = 0; k < col1; k++) {
+//                result[i][j] += matrix1[i][k] * matrix2[k][j];
+//            }
+//        }
+//    }
+//
+//    // 输出乘法结果
+//    printf("矩阵乘法的结果:\n");
+//    for (int i = 0; i < row1; i++) {
+//        for (int j = 0; j < col2; j++) {
+//            printf("%.2f ", result[i][j]);
+//        }
+//        printf("\n");
+//    }
+//    printf("继续请输入1，结束请输入0:");
+//    int is_end = 0;
+//    scanf("%d", &is_end);
+//    if (is_end == 0)
+//    {
+//        return 0;
+//    }
+//    else
+//    {
+//        goto begin;
+//    }
+//}
+
+//#include <stdio.h>
+////求矩阵的伴随矩阵
+//#define MAX_SIZE 10
+//
+//// 计算行列式
+//float determinant(float matrix[MAX_SIZE][MAX_SIZE], int n) {
+//    if (n == 1) {
+//        return matrix[0][0];
+//    }
+//
+//    float det = 0;
+//    float submatrix[MAX_SIZE][MAX_SIZE];
+//
+//    for (int c = 0; c < n; c++) {
+//        int subi = 0;
+//        for (int i = 1; i < n; i++) {
+//            int subj = 0;
+//            for (int j = 0; j < n; j++) {
+//                if (j == c) {
+//                    continue;
+//                }
+//                submatrix[subi][subj] = matrix[i][j];
+//                subj++;
+//            }
+//            subi++;
+//        }
+//        det += (c % 2 == 0 ? 1 : -1) * matrix[0][c] * determinant(submatrix, n - 1);
+//    }
+//
+//    return det;
+//}
+//
+//int main() {
+//    int n;
+//
+//    printf("输入矩阵的阶数 n: ");
+//    scanf("%d", &n);
+//
+//    if (n > MAX_SIZE) {
+//        printf("矩阵的阶数必须小于等于 %d。\n", MAX_SIZE);
+//        return 1;
+//    }
+//
+//    float matrix[MAX_SIZE][MAX_SIZE], adjMatrix[MAX_SIZE][MAX_SIZE];
+//
+//    printf("输入矩阵元素:\n");
+//    for (int i = 0; i < n; i++) {
+//        for (int j = 0; j < n; j++) {
+//            scanf("%f", &matrix[i][j]);
+//        }
+//    }
+//
+//    for (int i = 0; i < n; i++) {
+//        for (int j = 0; j < n; j++) {
+//            float submatrix[MAX_SIZE][MAX_SIZE];
+//            int subi = 0;
+//
+//            for (int si = 0; si < n; si++) {
+//                if (si == i) {
+//                    continue;
+//                }
+//
+//                int subj = 0;
+//                for (int sj = 0; sj < n; sj++) {
+//                    if (sj == j) {
+//                        continue;
+//                    }
+//                    submatrix[subi][subj] = matrix[si][sj];
+//                    subj++;
+//                }
+//                subi++;
+//            }
+//
+//            adjMatrix[i][j] = ((i + j) % 2 == 0 ? 1 : -1) * determinant(submatrix, n - 1);
+//        }
+//    }
+//
+//    // 转置伴随矩阵
+//    float transposedAdjMatrix[MAX_SIZE][MAX_SIZE];
+//    for (int i = 0; i < n; i++) {
+//        for (int j = 0; j < n; j++) {
+//            transposedAdjMatrix[i][j] = adjMatrix[j][i];
+//        }
+//    }
+//
+//    printf("伴随矩阵:\n");
+//    for (int i = 0; i < n; i++) {
+//        for (int j = 0; j < n; j++) {
+//            printf("%.2f ", transposedAdjMatrix[i][j]);
+//        }
+//        printf("\n");
+//    }
+//
+//    return 0;
+//}
+
+//#include<string.h>
+////输出9*9乘法口诀表
+//int main()
+//{
+//	int i = 1, j = 1;
+//	for (i = 1; i <= 9; i++)
+//	{
+//		for(j=1;j<=i;j++)
+//		{
+//			printf("%d*%d=%-2d ", j, i, i*j);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//int get_max(int*arr, int len)
+//{
+//	int max = arr[0];
+//	for (int i = 1; i < len; i++)
+//	{
+//		if (arr[i] > max)
+//			max = arr[i];
+//	}
+//	return max;
+//}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	for(int i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	printf("%d", get_max(arr, 10));
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	double ret = 0;
+//	for (i = 1; i <= 100; i++)
+//	{
+//		if (i % 2 == 0)
+//		{
+//			ret+= -(1.0) / i;
+//		}
+//		else
+//		{
+//			ret += 1.0 / i;
+//		}
+//	}
+//	printf("%lf", ret);
+//	return 0;
+//}
+
+//int main()
+//{
+//	for (int i = 1000; i <= 2000; i+=4)
+//	{
+//		if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+////数从1到100的所有整数中有多少数字9
+//int main()
+//{
+//	int count = 0;
+//	for (int i = 1; i <= 100; i++)
+//	{
+//		if (i % 10 == 9)
+//		{
+//			count++;
+//		}
+//		if (i / 10 == 9)
+//		{
+//			count++;
+//		}
+//	}
+//	printf("%d", count);
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//int main() {
+//    int number_to_guess, user_guess, attempts = 0;
+//    int lower_limit = 1;
+//    int upper_limit = 100;
+//
+//    // 生成随机数
+//    srand(time(0));
+//    number_to_guess = (rand() % (upper_limit - lower_limit + 1)) + lower_limit;
+//
+//    printf("欢迎参加猜数字游戏！\n");
+//    printf("我已经选择了一个在 %d 到 %d 之间的数字。看看你能否猜对它！\n", lower_limit, upper_limit);
+//
+//    do {
+//        printf("请输入你的猜测: ");
+//        scanf("%d", &user_guess);
+//        attempts++;
+//
+//        if (user_guess < number_to_guess) {
+//            printf("太小了，请再试一次。\n");
+//        }
+//        else if (user_guess > number_to_guess) {
+//            printf("太大了，请再试一次。\n");
+//        }
+//    } while (user_guess != number_to_guess);
+//
+//    printf("恭喜你，猜对了！你用了 %d 次尝试。\n", attempts);
+//
+//    return 0;
+//}
+
