@@ -1,2 +1,4 @@
 ﻿  test.c
+  test.cpp
+x64\Debug\test.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
   project_20231008.vcxproj -> D:\code2023\c-learning\project_20231008\x64\Debug\project_20231008.exe

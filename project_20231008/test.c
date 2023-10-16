@@ -929,47 +929,161 @@
 //	return 0;
 //}
 
+//int mySqrt(int x);
+//
+//int main() {
+//    int x;
+//    scanf("%d", &x);
+//
+//    int result = mySqrt(x);
+//
+//    printf("x 的平方根为: %d\n", result);
+//
+//    return 0;
+//}
+//
+//int mySqrt(int x) {
+//    if (x <= 1) {
+//        return x;
+//    }
+//
+//    long left = 1;
+//    long right = x;
+//    while (left <= right) {
+//        long mid = left + (right - left) / 2;
+//        long square = mid * mid;
+//        if (square == x) {
+//            return (int)mid;
+//        }
+//        else if (square < x) {
+//            left = mid + 1;
+//        }
+//        else {
+//            right = mid - 1;
+//        }
+//    }
+//
+//    return (int)right;
+//}
+
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int arr[101] = { 10000000 };
+//	int max = arr[0];
+//	int i = 0;
+//	while(i < n)
+//	{
+//		scanf("%d", &arr[i]);
+//		if (arr[i] < max)
+//		{
+//			max = arr[i];
+//		}
+//		i++;
+//	}
+//	printf("%d", max);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int n, k;
+//	scanf("%d %d", &n, &k);
+//	int sum1 = 0, sum2 = 0;
+//	int count1=0, count2 = 0;
+//	for (int i = 1; i <=n; i++)
+//	{
+//		if (i % k == 0)
+//		{
+//			sum1 += i;
+//			count1++;
+//		}
+//		else
+//		{
+//			sum2 += i;
+//			count2++;
+//		}
+//	}
+//	printf("%.1lf %.1lf", sum1*1.0/count1, sum2*1.0/count2);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a, count = 0;
+//	scanf("%d", &a);
+//	while (a >= 1)
+//	{
+//		a /= 2;
+//		count++;
+//	}
+//	printf("%d", count);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int count = n;
+//	int countplus = n;
+//	for(int i=1;i<=(1+n)*n/2;i++)
+//	{
+//
+//			if(i<10)
+//			{
+//				printf("0%d", i);
+//			}
+//			else
+//			{
+//				printf("%d", i);
+//			}
+//			count--;
+//			if(count==0)
+//			{
+//				printf("\n");
+//				countplus--;
+//				count = countplus;
+//			}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int n = 0, i = 0;
+//	scanf("%d", &n);
+//	int count_2 = 0;
+//	for (i = 1; i <= n; i++)
+//	{
+//		if (i % 10 == 2)
+//		{
+//			count_2++;
+//		}
+//		if (i / 10 % 10 == 2)
+//		{
+//			count_2++;
+//		}
+//		if (i / 100 % 10 == 2)
+//		{
+//			count_2++;
+//		}
+//		if (i / 1000 % 10 == 2)
+//		{
+//			count_2++;
+//		}
+//	}
+//	printf("%d", count_2);
+//	return 0;
+//}
+
 #include <stdio.h>
+int main()
+{
 
-int mySqrt(int x);
-
-int main() {
-    int x;
-    scanf("%d", &x);
-
-    int result = mySqrt(x);
-
-    printf("x 的平方根为: %d\n", result);
-
-    return 0;
+	return 0;
 }
-
-int mySqrt(int x) {
-    if (x <= 1) {
-        return x;
-    }
-
-    long left = 1;
-    long right = x;
-    while (left <= right) {
-        long mid = left + (right - left) / 2;
-        long square = mid * mid;
-        if (square == x) {
-            return (int)mid;
-        }
-        else if (square < x) {
-            left = mid + 1;
-        }
-        else {
-            right = mid - 1;
-        }
-    }
-
-    return (int)right;
-}
-
-
-
 
 
 
