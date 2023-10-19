@@ -336,4 +336,57 @@
 //	return 0;
 //}
 
-//#include<stdio.h>
+////Ã°ÅİÅÅĞò
+//void bubblesort(int arr[], int len)
+//{
+//	int i = 0, j = 0;
+//	for (i = 0; i < len - 1; i++)
+//	{
+//		int flag = 1;
+//		for (j = 0; j < len - 1 - i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				flag = 0;
+//				int tmp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tmp;
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			break;
+//		}
+//	}
+//}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	int len = 10;
+//	bubblesort(arr, len);
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	char s[100];
+//	scanf("%[^\n]", s);
+//	printf("%s", s);
+//	return 0;
+//}
+
+#include<stdio.h>
+int main()
+{
+
+	return 0;
+}

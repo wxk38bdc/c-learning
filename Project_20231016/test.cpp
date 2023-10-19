@@ -104,6 +104,82 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	char s1[100];
+//	char s2[100];
+//	cin >> s1;
+//	cout << s1 << endl;
+//	cin.sync();//清空缓冲区
+//	cin.getline(s2, 100);
+//	cout << s2 << endl;
+//	return 0;
+//}  
+
+//int main()
+//{
+//	char str1[20] = "aellooo";
+//	char str2[] = "hello";
+//	//strcat(str1, str2); //str1会变为We arecsdn!Hello!
+//	cout << strcmp(str1,str2) << endl;
+//	return 0;
+//}
+
+////自己要经常回味这个代码，要确保自己理解原理，能写出来，能举一反三
+//int main()//大数相加
+//{
+//	char a1[200] = { 0 }, b1[200] = { 0 };
+//	int a[200] = { 0 }, b[200] = { 0 }, c[200] = { 0 };
+//	int a1_len, b1_len, lenc, i, x;
+//	scanf("%s", a1);//输入第一个数
+//	scanf("%s", b1);//输入第二个数
+//	a1_len=strlen(a1);//第一个数的位数
+//	b1_len=strlen(b1);//第二个数的位数
+//	for (i = 0; i < a1_len; i++)
+//	{
+//		a[a1_len - i] = a1[i] - '0';//将第一个数逆序存入数组a
+//	}
+//	for (i = 0; i < b1_len; i++)
+//	{
+//		b[b1_len - i] = b1[i] - '0';//将第二个数逆序存入数组b
+//	}
+//	lenc = 1;
+//	x = 0;
+//	while (lenc <= a1_len || lenc <= b1_len)
+//	{
+//		c[lenc] = a[lenc] + b[lenc] + x;//从低位开始相加
+//		x = c[lenc] / 10;//进位
+//		c[lenc] = c[lenc] % 10;//留下该位的一位数
+//		lenc++;
+//	}
+//	c[lenc] = x;//最高位进位
+//	if (c[lenc] == 0)
+//	{
+//		lenc--;
+//	}
+//	for (i = lenc; i >= 1; i--)
+//	{
+//		printf("%d", c[i]);
+//	}
+//	printf("\n");
+//	return 0;
+//}
+
+//struct student
+//{
+//	char name[20];
+//	int age;
+//	int score;
+//	int height;
+//};
+//int main()
+//{
+//	const int n = 6;
+//	int arr[n]= { 1,2,3 };
+//	printf("%d", arr[0]);
+//	return 0;
+//}
+
 #include <iostream>
 #include <cstring>
 #include <cstdio>
