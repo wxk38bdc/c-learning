@@ -1,3 +1,4 @@
-﻿  c_test.c
-  test.cpp
+﻿  test.cpp
+D:\code2023\c-learning\Project_20231016\test.cpp(139,15): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\code2023\c-learning\Project_20231016\test.cpp(140,15): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
   Project_20231016.vcxproj -> D:\code2023\c-learning\Project_20231016\x64\Debug\Project_20231016.exe
