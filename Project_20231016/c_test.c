@@ -384,9 +384,100 @@
 //	return 0;
 //}
 
-//#include<stdio.h>
+//int add(int x, int y);
 //int main()
 //{
-//
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d%d", &a, &b);
+//	int c = add(a, b);
+//	printf("%d", c);
 //	return 0;
 //}
+//int add(int x, int y)
+//{
+//	return x + y;
+//}
+
+//int akm(int m, int n)
+//{
+//	if (m == 0)
+//	{
+//		return n + 1;
+//	}
+//	else if (m > 0 && n == 0)
+//	{
+//		return akm(m - 1, 1);
+//	}
+//	else if (m > 0 && n > 0)
+//	{
+//		return akm(m - 1, akm(m, n - 1));
+//	}
+//}
+//int main()
+//{
+//	int m, n;
+//	scanf("%d%d", &m, &n);
+//	int ret = akm(m, n);
+//	printf("%d", ret);
+//	return 0;
+//}
+
+//int main()
+//{
+//	char arr[100]={0};
+//	int k = 0;
+//	scanf("%s", arr);
+//	scanf("%d", &k);
+//	int len = strlen(arr);
+//	printf("%c", arr[len-k]);
+//	return 0;
+//}
+
+//double func(int n, int x)
+//{
+//	if (n == 0)
+//	{
+//		return 1;
+//	}
+//	else if (n == 1)
+//	{
+//		return 2.0 * x;
+//	}
+//	else if (n > 1)
+//	{
+//		return 2.0 * x * func(n - 1, x) - 2.0 * (n - 1) * func(n - 2, x);
+//	}
+//}
+//int main()
+//{
+//	double x = 0;
+//	double n = 0;
+//	scanf("%lf %lf", &n, &x);
+//	double ret=func(n, x);
+//	printf("%.0lf", ret);
+//	return 0;
+//}
+
+//double func(double n, double x)
+//{
+//	if (n == 1)
+//	{
+//		return sqrt(1 + x);
+//	}
+//	else if (n > 1)
+//	{
+//		return sqrt(n + func(n - 1, x));
+//	}
+//}
+//int main()
+//{
+//	double x, n;
+//	scanf("%lf %lf", &x, &n);
+//	double sum = func(n, x);
+//	printf("%.2lf", sum);
+//	return 0;
+//}
+
+#include<stdio.h>
+#include<math.h>
