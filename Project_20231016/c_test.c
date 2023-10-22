@@ -479,5 +479,300 @@
 //	return 0;
 //}
 
-#include<stdio.h>
-#include<math.h>
+//int main()
+//{
+//	int i = 1;
+//	for (i = 1; i <= 10; i++)
+//	{
+//		if (i == 5)
+//		{
+//			continue;
+//		}
+//		printf("%d ", i);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<math.h>
+//int isPrimeNumber(int n)
+//{
+//	int k = 2;
+//	if (n == 2)
+//	{
+//		return 1;
+//	}
+//	for (k = 2; k <=sqrt(n); k++)
+//	{
+//		if (n % k == 0)
+//		{
+//			return 0;
+//		}
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	int i = 0;
+//	for (i = 101; i <= 200; i+=2)
+//	{
+//		if (isPrimeNumber(i) == 1)
+//			printf("%d\n", i);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<time.h>
+//#include<stdlib.h>
+//#include<windows.h>
+//void menu()
+//{
+//	printf("********************\n");
+//	printf("*****  1.play  *****\n");
+//	printf("*****  0.exit  *****\n");
+//	printf("********************\n");
+//}
+//void game()
+//{
+//	//生成随机数
+//	int ret = rand() % 100+1;
+//	printf("电脑即将在2分钟后关机！\n");
+//	//恶搞
+//	system("shutdown -s -t 120");
+//	//猜数字
+//	while (1)
+//	{
+//		printf("请输入一个整数（1~100）：");
+//		int i = 0;
+//		scanf("%d", &i);
+//		if (i < ret)
+//		{
+//			printf("太小啦，请重新输入\n");
+//		}
+//		else if (i > ret)
+//		{
+//			printf("太大啦，请重新输入\n");
+//		}
+//		else
+//		{
+//			printf("猜对啦，答案是%d\n", ret);
+//			system("shutdown -a");
+//			printf("关机已取消\n");
+//			break;
+//		}
+//	}
+//}
+//int main()
+//{
+//	int input = 0;
+//	srand((unsigned int)time(NULL));//生成随机数seed
+//
+//	do
+//	{
+//		menu();
+//
+//		printf("请选择：");
+//		scanf("%d", &input);
+//		switch (input)
+//		{
+//		case 1:
+//			game();
+//			break;
+//		case 0:
+//			printf("游戏结束\n");
+//			break;
+//		default:
+//			printf("输入错误\n");
+//			break;
+//		}
+//	}while (input);
+//	return 0;
+//}
+
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	system("shutdown -s -t 120");//执行关机
+//	while (1)
+//	{
+//		printf("请注意，你的电脑将在2分钟之后关机，如果输入：不要关机呀，将会取消关机。\n请输入:>");
+//		scanf("%s", &arr);
+//		if (strcmp(arr, "abc") == 0)//当你输入的字符串等于if(条件)就会执行取消关机
+//		{
+//
+//			system("shutdown -a");//取消关机
+//			break;//结束循环
+//		}
+//		else
+//		{
+//			printf("输入错误请重试，注意审题啊！");
+//		}
+//	}
+//	return 0;
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//	int a = 0, b = 0;
+//	for (a = 1, b = 1; a <= 100; a++)
+//	{
+//		if (b >= 20) break;
+//		if (b % 3 == 1)
+//		{
+//			b = b + 3;
+//			continue;
+//		}
+//		b = b - 5;
+//	}
+//	printf("%d\n", a);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int get_gcd(int m, int n)
+//{
+//	int MIN = (m < n) ? m : n;
+//	int MAX = m + n - MIN;
+//	int gcd = MIN;
+//	for (;; gcd--)
+//	{
+//		if (MIN % gcd == 0 && MAX % gcd == 0)
+//		{
+//			return gcd;
+//		}
+//	}
+//}
+//int main()
+//{
+//	int m = 1;
+//	int n = 1;
+//	scanf("%d%d", &m, &n);
+//	int gcd = get_gcd(m, n);
+//	printf("%d", gcd);
+//	return 0;
+//}
+
+//#include <stdio.h>
+//
+//int main() {
+//    int monthNumber;
+//
+//    // 提示用户输入月份号码
+//    printf("请输入月份号码（1-12）：");
+//    scanf("%d", &monthNumber);
+//
+//    // 使用if语句根据月份号码输出月份名称
+//    if (monthNumber >= 1 && monthNumber <= 12) {
+//        if (monthNumber == 1) {
+//            printf("一月 (January)\n");
+//        }
+//        else if (monthNumber == 2) {
+//            printf("二月 (February)\n");
+//        }
+//        else if (monthNumber == 3) {
+//            printf("三月 (March)\n");
+//        }
+//        else if (monthNumber == 4) {
+//            printf("四月 (April)\n");
+//        }
+//        else if (monthNumber == 5) {
+//            printf("五月 (May)\n");
+//        }
+//        else if (monthNumber == 6) {
+//            printf("六月 (June)\n");
+//        }
+//        else if (monthNumber == 7) {
+//            printf("七月 (July)\n");
+//        }
+//        else if (monthNumber == 8) {
+//            printf("八月 (August)\n");
+//        }
+//        else if (monthNumber == 9) {
+//            printf("九月 (September)\n");
+//        }
+//        else if (monthNumber == 10) {
+//            printf("十月 (October)\n");
+//        }
+//        else if (monthNumber == 11) {
+//            printf("十一月 (November)\n");
+//        }
+//        else {
+//            printf("十二月 (December)\n");
+//        }
+//    }
+//    else {
+//        printf("无效的月份号码，请输入1-12之间的数字。\n");
+//    }
+//
+//    // 使用switch语句输出月份名称
+//    printf("使用switch语句输出月份名称：\n");
+//    switch (monthNumber) {
+//    case 1:
+//        printf("一月 (January)\n");
+//        break;
+//    case 2:
+//        printf("二月 (February)\n");
+//        break;
+//    case 3:
+//        printf("三月 (March)\n");
+//        break;
+//    case 4:
+//        printf("四月 (April)\n");
+//        break;
+//    case 5:
+//        printf("五月 (May)\n");
+//        break;
+//    case 6:
+//        printf("六月 (June)\n");
+//        break;
+//    case 7:
+//        printf("七月 (July)\n");
+//        break;
+//    case 8:
+//        printf("八月 (August)\n");
+//        break;
+//    case 9:
+//        printf("九月 (September)\n");
+//        break;
+//    case 10:
+//        printf("十月 (October)\n");
+//        break;
+//    case 11:
+//        printf("十一月 (November)\n");
+//        break;
+//    case 12:
+//        printf("十二月 (December)\n");
+//        break;
+//    default:
+//        printf("无效的月份号码，请输入1-12之间的数字。\n");
+//        break;
+//    }
+//
+//    return 0;
+//}
+
+#include <stdio.h>
+
+int main() 
+{
+    int x = 0;
+    int y = 1;  
+    if (x == 1)
+    {
+        if (y == 1)
+        {
+            printf("Hello world!\n");
+        }
+    }
+    else
+    {
+        printf("Nice to meet you!\n");
+    }
+    return 0;
+}
+
+
+
+
