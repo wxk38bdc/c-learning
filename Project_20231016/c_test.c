@@ -753,25 +753,183 @@
 //    return 0;
 //}
 
-#include <stdio.h>
+//#include <stdio.h>
+//
+//int main() 
+//{
+//    int x = 0;
+//    int y = 1;  
+//    if (x == 1)
+//    {
+//        if (y == 1)
+//        {
+//            printf("Hello world!\n");
+//        }
+//    }
+//    else
+//    {
+//        printf("Nice to meet you!\n");
+//    }
+//    return 0;
+//}
 
-int main() 
-{
-    int x = 0;
-    int y = 1;  
-    if (x == 1)
-    {
-        if (y == 1)
-        {
-            printf("Hello world!\n");
-        }
-    }
-    else
-    {
-        printf("Nice to meet you!\n");
-    }
-    return 0;
-}
+//#include <stdio.h>
+//#include <time.h>
+//#include <stdlib.h>
+//#include <windows.h>
+//
+//void menu()
+//{
+//    printf("********************\n");
+//    printf("*****  1.play  *****\n");
+//    printf("*****  0.exit  *****\n");
+//    printf("********************\n");
+//}
+//
+//void game()
+//{
+//    // 生成随机数
+//    int ret = rand() % 100 + 1;
+//    printf("电脑即将在2分钟后关机！\n");
+//
+//    // 恶搞：模拟计算机将在2分钟后关机
+//    system("shutdown -s -t 120");
+//
+//    // 猜数字
+//    while (1)
+//    {
+//        printf("请输入一个整数（1~100）：");
+//        int i = 0;
+//        scanf("%d", &i);
+//
+//        if (i < ret)
+//        {
+//            printf("太小啦，请重新输入\n");
+//        }
+//        else if (i > ret)
+//        {
+//            printf("太大啦，请重新输入\n");
+//        }
+//        else
+//        {
+//            printf("猜对啦，答案是%d\n",ret);
+//
+//            // 取消计算机关机操作
+//            system("shutdown -a");
+//            printf("关机已取消\n");
+//            break;
+//        }
+//    }
+//}
+//
+//int main()
+//{
+//    int input = 0;
+//
+//    // 初始化随机数生成器的种子
+//    srand((unsigned int)time(NULL));
+//
+//    do
+//    {
+//        menu();
+//
+//        printf("请选择：");
+//        scanf("%d", &input);
+//        switch (input)
+//        {
+//        case 1:
+//            game(); // 进入游戏
+//            break;
+//        case 0:
+//            printf("游戏结束\n");
+//            break;
+//        default:
+//            printf("输入错误\n");
+//            break;
+//        }
+//    } while (input);
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//	int arr[100][100] = { 0 };
+//	int n = 0;
+//	scanf("%d", &n);
+//	int i = 0, j = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		for (j = 0; j <= i; j++)
+//		{
+//			scanf("%d", &arr[i][j]);
+//		}
+//	}
+//	int count[100000] = { 0 };
+//	int xia = 0, youxia = 0;
+//	int k = 0;
+//	for (i = 0; i < n - 1; i++)
+//	{
+//		int tmp = 0;
+//	}
+//	//for (i = 0; i < n; i++)
+//	//{
+//	//	for (j = 0; j < n; j++)
+//	//	{
+//	//		printf("%d ", arr[i][j]);
+//	//	}
+//	//	printf("\n");
+//	//}
+//	return 0;
+//}
+
+//#include <stdlib.h>
+//int main()
+//{
+//	char s, t;
+//	scanf("%c %c", &s, &t);
+//	int num1 = (int)s - 65;
+//	int num2 = (int)t - 65;
+//	int sum = num1 + num2;
+//	if (sum <= 25)
+//	{
+//		printf("%c", sum + 65);
+//	}
+//	else
+//	{
+//		printf("%c%c", sum / 26 + 65, sum % 26 + 65);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//    long long M, k, n;
+//    scanf("%lld %lld %lld", &M, &k, &n);
+//    if (n == 2)
+//    {
+//        printf("%lld", (k * k - 2) % M);
+//    }
+//    else if (n == 1)
+//    {
+//		printf("%lld", k % M);
+//    }
+//	else
+//	{
+//        long long tmp1 = k;
+//        long long tmp2 = k * k - 2;
+//        for(int i=3;i<=n;i++)
+//		{
+//			long long tmp = tmp2;
+//			tmp2 = (k * tmp2 - tmp1) % M;
+//			tmp1 = tmp;
+//		}
+//		printf("%lld", tmp2);
+//	}
+//    return 0;
+//}
+
+#include<stdio.h>
 
 
 
