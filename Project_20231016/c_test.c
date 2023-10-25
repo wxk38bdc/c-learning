@@ -929,8 +929,277 @@
 //    return 0;
 //}
 
+//int main()
+//{
+//	int arr[3][3][3] = { 1,2,3,4,5,6,7,8,9,10,11 };
+//	for (int i = 0; i < 3; i++)
+//	{
+//		for (int j = 0; j < 3; j++)
+//		{
+//			for (int k = 0; k < 3; k++)
+//			{
+//				printf("%d ", arr[i][j][k]);
+//			}
+//		}
+//	}
+//	return 0;
+//}
+
+//#include<windows.h>
+//int main()
+//{
+//	char arr1[] = "welcome to NANKAI";
+//	char arr2[] = "*****************";
+//	int left = 0;
+//	int right = strlen(arr1) - 1;
+//	printf("%s\n", arr2);
+//	while (left <= right)
+//	{
+//		Sleep(200);
+//		arr2[right] = arr1[right];
+//		arr2[left] = arr1[left];
+//		left++;
+//		right--;
+//		printf("%s\n", arr2);
+//		Sleep(50);
+//		if (left <= right)
+//		{
+//			system("cls");
+//		}
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+////在升序数组中实现二分查找
+//int main()
+//{
+//	int arr[] = { 2,4,6,8,12,15,18,23,25,59,108,1024 };
+//	int left = 0;
+//	int right = sizeof(arr) / sizeof(arr[0]) - 1;
+//	int find = 0;
+//	int key = (right + left) / 2;
+//	scanf("%d", &find);
+//	int flag = 0;
+//	while (left <= right)
+//	{
+//		key = (right + left) / 2;
+//		if (find == arr[key])
+//		{
+//			printf("找到了，下标是%d", key);
+//			flag = 1;
+//			break;
+//		}
+//		else if (find > arr[key])
+//		{
+//			left = key + 1;
+//		}
+//		else if (find < arr[key])
+//		{
+//			right = key - 1;
+//		}
+//	}
+//	if (flag == 0)
+//	{
+//		printf("很遗憾，没找到");
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+////求10个整数的平均值
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	int sum = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		sum += arr[i];
+//	}
+//	printf("%d", sum / 10);
+//	return 0;
+//}
+
+
+//int main() 
+//{
+//	int a = 0;
+//	
+//	while(scanf("%d", &a)!=EOF)
+//	{
+//		scanf("%d", &a);
+//		int left = 0;
+//		int right = a - 1;
+//		int i = 0;
+//		for (i = 0; i < a; i++)
+//		{
+//			int j = 0;
+//			for (j = 0; j < a; j++)
+//			{
+//				if (j == left || j == right)
+//				{
+//					printf("*");
+//				}
+//				else
+//				{
+//					printf(" ");
+//				}
+//			}
+//			printf("\n");
+//			left++;
+//			right--;
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 0;
+//
+//	while(scanf("%d", &a)!=EOF)
+//	for (int i = 0; i < a; i++)
+//	{
+//		for (int j = 0; j < a; j++)
+//		{
+//			if(i==0||i==a-1||j==0||j==a-1)
+//			{
+//				printf("* ");
+//			}
+//			else
+//			{
+//				printf("  ");
+//			}
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+////矩阵转置
+//int main()
+//{
+//	int arr[11][11] = { 0 };
+//	int n, m;
+//	scanf("%d %d", &n, &m);
+//	int i = 0, j = 0;
+//	for(i=0;i<n;i++)
+//	{
+//		for (j = 0; j < m; j++)
+//		{
+//			scanf("%d", &arr[i][j]);
+//		}
+//	}
+//	for (j = 0; j < m; j++)
+//	{
+//		for (i = 0; i < n; i++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int i = 0;
+//	for(i=0;i<10;i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	//逆序打印
+//	for (i = 9; i >=0; i--)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//}
+
+//#include <stdio.h>
+////交换数组A和数组B的值
+//int main()
+//{
+//	int A[10] = { 0 };
+//	int B[10] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &A[i]);
+//	}
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &B[i]);
+//	}
+//	for (i = 0; i < 10; i++)
+//	{
+//		int tmp = A[i];
+//		A[i] = B[i];
+//		B[i] = tmp;
+//	}
+//	printf("数组A的元素是：");
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", A[i]);
+//	}
+//	printf("\n");
+//	printf("数组A的元素是：");
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", B[i]);
+//	}
+//	return 0;
+//}
+
+//冒泡排序
 #include<stdio.h>
+void bubbleSort(int arr1[],int sum)
+{
+	int i = 0, j = 0;
+	for (i = 0; i <sum; i++)
+	{
+		int flag = 1;
+		for (j = 0; j < sum - 1 - i; j++)
+		{
+			if (arr1[j] > arr1[j + 1])
+			{
+				flag = 0;
+				int tmp = arr1[j];
+				arr1[j] = arr1[j + 1];
+				arr1[j + 1] = tmp;
+			}
+		}
+		if (flag == 1)
+		{
+			break;
+		}
+	}
+}
 
-
-
-
+int main()
+{
+	int n, m;
+	int i = 0;
+	scanf("%d %d", &n, &m);
+	int sum = m + n;
+	int arr1[2001] = { 0 };
+	for (i = 0; i < m; i++)
+	{
+		scanf("%d", &arr1[i]);
+	}
+	for (i = m; i < m + n; i++)
+	{
+		scanf("%d", &arr1[i]);
+	}
+	bubbleSort(arr1,sum);
+	for (i = 0; i < m+n; i++)
+	{
+		printf("%d ", arr1[i]);
+	}
+	return 0;
+}
