@@ -622,126 +622,893 @@
 //	return 0;
 //}
 
-#include<stdio.h>
-#include<string.h>
-void bubbleSort_int(int arr[], int len)//冒泡排序_int
-{
-	int i = 0, j = 0;
-	for (i = 0; i < len - 1; i++)
-	{
-		for (j = 0; j < len - 1 - i; j++)
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				int tmp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = tmp;
-			}
-		}
-	}
-}
-void bubbleSort_double(double arr[], int len)//冒泡排序_double
-{
-	int i = 0, j = 0;
-	for (i = 0; i < len - 1; i++)
-	{
-		for (j = 0; j < len - 1 - i; j++)
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				double tmp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = tmp;
-			}
-		}
-	}
-}
-void func_int(int arr[], int size)
-{
-	//挑选出arr中的奇数并从小到大输出
-	int i = 0, j = 0;
-	int arr_odd[1001] = { 0 };
-	for (i = 0; i < size; i++)
-	{
-		if (arr[i] % 2 != 0)
-		{
-			arr_odd[j] = arr[i];
-			j++;
-		}
-	}
-	bubbleSort_int(arr_odd, j);
-	for (i = 0; i < j; i++)
-	{
-		printf("%d ", arr_odd[i]);
-	}
-}
-void func_double(double arr[], int size)
-{
-	//对arr中的浮点数进行四舍五入并存入新数组
-	//不太对，一会修改
-	int i = 0;
-	int arr_new[1001] = { 0 };
-	for (i = 0; i < size; i++)
-	{
-		if (arr[i] - (int)arr[i] >= 0.5)
-		{
-			arr_new[i] = (int)arr[i] + 1;
-		}
-		else
-		{
-			arr_new[i] = (int)arr[i];
-		}
-		func_int(arr_new, size);
-	}
-}
-void func_char(char arr[], int size)
-{
-	//挑选出出现次数为奇数的字符并按照ASCII码从小到大输出
-	//要去重！！！
-	int i = 0, j = 0;
-	int arr_odd[1001] = { 0 };
-	
-}
-int main()
-{
-	//初始化并输入
-	int m, n;
-	scanf("%d%d", &m, &n);
-	int arr1[1001] = { 0 };
-	double arr2[1001] = { 0 };
-	char arr3[1001] = { 0 };
-	int i = 0, j = 0;
-	for (i = 0; i < m; i++)
-	{
-		scanf("%d", &arr1[i]);
-	}
-	for (i = 0; i < n; i++)
-	{
-		scanf("%lf", &arr2[i]);
-	}
-	scanf("%s", arr3);
-	//调用函数
-	func_int(arr1, m);
-	printf("\n");
-	func_double(arr2, n);//不太对，一会修改
-	printf("\n");
-	func_char(arr3, strlen(arr3));//要去重！！！
-
-	return 0;
-}
-
-////测试输出  在上面
-//for (i = 0; i < m; i++)
+//void bubbleSort_double(double arr[], int len)//冒泡排序_double
 //{
-//	printf("%d ", arr1[i]);
+//	int i = 0, j = 0;
+//	for (i = 0; i < len - 1; i++)
+//	{
+//		for (j = 0; j < len - 1 - i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				double tmp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tmp;
+//			}
+//		}
+//	}
 //}
-//printf("\n");
-//for (i = 0; i < n; i++)
+
+//#include<stdio.h>
+//#include<string.h>
+////完结撒花！！！终于过啦！！！
+//void bubbleSort_int(int arr[], int len)//冒泡排序_int
 //{
-//	printf("%lf", arr2[i]);
+//	int i = 0, j = 0;
+//	for (i = 0; i < len - 1; i++)
+//	{
+//		for (j = 0; j < len - 1 - i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				int tmp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tmp;
+//			}
+//		}
+//	}
 //}
-//printf("\n");
-//printf("%s", arr3);
+//void func_int(int arr[], int size)
+//{
+//	//挑选出arr中的奇数并从小到大输出
+//	int i = 0, j = 0;
+//	int arr_odd[1001] = { 0 };
+//	int flag = 0;
+//	for (i = 0; i < size; i++)
+//	{
+//		if (arr[i] % 2 != 0)
+//		{
+//			arr_odd[j] = arr[i];
+//			j++;
+//			flag = 1;
+//		}
+//	}
+//	bubbleSort_int(arr_odd, j);
+//	if (flag == 1)
+//	{
+//		for (i = 0; i < j; i++)
+//		{
+//			printf("%d ", arr_odd[i]);
+//		}
+//	}
+//	else
+//	{
+//		printf("No Odd!");
+//	}
+//	
+//}
+//void func_double(double arr2[], int size)
+//{
+//	//对arr中的浮点数进行四舍五入并存入新数组
+//	int i = 0;
+//	int arr_new[1001] = { 0 };
+//	for (i = 0; i < size; i++)
+//	{
+//		if (arr2[i] - (int)arr2[i] >= 0.5)
+//		{
+//			arr_new[i] = (int)arr2[i] + 1;
+//		}
+//		else
+//		{
+//			arr_new[i] = (int)arr2[i];
+//		}
+//	}
+//	func_int(arr_new, size);
+//}
+//void func_char(char arr[], int size)
+//{
+//	//挑选出出现次数为奇数的字符并按照ASCII码从小到大输出
+//	int i = 0, j = 0;
+//	int arr_ASCII[128] = { 0 };
+//	for (i = 0; i < size; i++)
+//	{
+//		arr_ASCII[(int)arr[i]]++;
+//	}
+//	int flag = 0;
+//	char arr_end[128] = { 0 };
+//	j = 0;
+//	for (i = 0; i < 128; i++)
+//	{
+//		if (arr_ASCII[i] % 2 == 1)
+//		{
+//			arr_end[j] = (char)i;
+//			j++;
+//			flag = 1;
+//		}
+//	}
+//	arr_end[j] = '\0';
+//	if (flag == 1)
+//	{
+//		j = 0;
+//		while (arr_end[j] != '\0')
+//		{
+//			printf("%c ", arr_end[j]);
+//			j++;
+//		}
+//	}
+//	else
+//	{
+//		printf("No Odd!");
+//	}
+//}
+//int main()
+//{
+//	//初始化并输入
+//	int m, n;
+//	scanf("%d%d", &m, &n);
+//	int arr1[1001] = { 0 };
+//	double arr2[1001] = { 0 };
+//	char arr3[1001] = { 0 };
+//	int i = 0, j = 0;
+//	for (i = 0; i < m; i++)
+//	{
+//		scanf("%d", &arr1[i]);
+//	}
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%lf", &arr2[i]);
+//	}
+//	scanf("%s", arr3);
+//	//调用函数
+//	func_int(arr1, m);
+//	printf("\n");
+//	func_double(arr2, n);
+//	printf("\n");
+//	func_char(arr3, strlen(arr3));
+//
+//	return 0;
+//}
+
+////用ChatGPT写的
+////What f**k!S**t!
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h> // 添加头文件以使用malloc和free
+//
+//struct Student {
+//    char id[31];
+//    char name[31];
+//    double mathScore;
+//    double chineseScore;
+//    double englishScore;
+//};
+//
+//void sortStudents(struct Student students[], int n, int rankingBasis) {
+//    // 保持不变
+//}
+//
+//int main() {
+//    int n;
+//    scanf("%d", &n);
+//
+//    while (n--) {
+//        int numStudents;
+//        scanf("%d", &numStudents);
+//
+//        // 使用动态内存分配来分配学生结构体的数组
+//        struct Student* students = (struct Student*)malloc(numStudents * sizeof(struct Student));
+//
+//        for (int i = 0; i < numStudents; i++) {
+//            scanf("%s %s %lf %lf %lf",
+//                students[i].id, students[i].name,
+//                &students[i].mathScore, &students[i].chineseScore, &students[i].englishScore);
+//        }
+//
+//        int rankingBasis;
+//        scanf("%d", &rankingBasis);
+//
+//        if (rankingBasis < 1 || rankingBasis > 3) {
+//            printf("ERROR\n");
+//        }
+//        else {
+//            sortStudents(students, numStudents, rankingBasis);
+//
+//            for (int i = 0; i < numStudents; i++) {
+//                printf("%s %s\n", students[i].id, students[i].name);
+//            }
+//        }
+//
+//        // 释放动态分配的内存
+//        free(students);
+//    }
+//
+//    return 0;
+//}
 
 
+//#include<stdio.h>
+//#include<string.h>
+////version1
+//void bubbleSort_double(double arr[], int len)//冒泡排序_double//从大到小
+//{
+//	int i = 0, j = 0;
+//	for (i = 0; i < len - 1; i++)
+//	{
+//		for (j = 0; j < len - 1 - i; j++)
+//		{
+//			if (arr[j] < arr[j + 1])
+//			{
+//				double tmp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tmp;
+//			}
+//		}
+//	}
+//}
+//void bubbleSort_long(long arr[], int len)//冒泡排序_long//从小到大
+//{
+//	int i = 0, j = 0;
+//	for (i = 0; i < len - 1; i++)
+//	{
+//		for (j = 0; j < len - 1 - i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				long tmp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tmp;
+//			}
+//		}
+//	}
+//}
+//struct student
+//{
+//	long id;
+//	char name[35];
+//	double math;
+//	double chinese;
+//	double english;
+//}arr1[101],arr2[101];
+//int main()
+//{
+//	int n = 0, i = 0, j = 0;
+//	scanf("%d", &n);
+//	//输入
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%ld %s %lf %lf %lf", &arr1[i].id, arr1[i].name, &arr1[i].math, &arr1[i].chinese, &arr1[i].english);
+//	}
+//	//把所有学生按照学号从小到大排序
+//	long arr_id[101] = { 0 };
+//	for (i = 0; i < n; i++)
+//	{
+//		arr_id[i] = arr1[i].id;
+//	}
+//	bubbleSort_long(arr_id, n);
+//	//按照学号从小到大将学生信息存入arr2中
+//	for (i = 0; i < n; i++)
+//	{
+//		for (j = 0; j < n; j++)//找到对应的学生
+//		{
+//			if (arr_id[i] == arr1[j].id)
+//			{
+//				arr2[i].id = arr1[j].id;
+//				strcpy(arr2[i].name, arr1[j].name);
+//				arr2[i].math = arr1[j].math;
+//				arr2[i].chinese = arr1[j].chinese;
+//				arr2[i].english = arr1[j].english;
+//				break;
+//			}
+//		}
+//	}
+//	int choice = 0;
+//	scanf("%d", &choice);
+//	if (choice > 3 || choice < 1)
+//	{
+//		printf("ERROR\n");
+//	}
+//	if (choice == 1)//按照数学成绩排名
+//	{
+//		double arr_math[101] = { 0 };
+//		for (i = 0; i < n; i++)
+//		{
+//			arr_math[i] = arr2[i].math;
+//		}
+//		bubbleSort_double(arr_math, n);
+//		//找到对应的学生,如有成绩相同，按照学号从小到大排名
+//		for (i = 0; i < n; i++)
+//		{
+//			for (j = 0; j < n; j++)//找到对应的学生
+//			{
+//				if (arr_math[i] == arr2[j].math)
+//				{
+//					printf("%ld %s\n", arr2[j].id, arr2[j].name);
+//					arr2[j].math = -1;//将该学生的成绩变为-1，防止重复输出
+//					break;
+//				}
+//			}
+//		}
+//	}
+//	else if (choice == 2)//按照语文成绩排名
+//	{
+//		double arr_chinese[101] = { 0 };
+//		for (i = 0; i < n; i++)
+//		{
+//			arr_chinese[i] = arr2[i].chinese;
+//		}
+//		bubbleSort_double(arr_chinese, n);
+//		for (i = 0; i < n; i++)
+//		{
+//			for (j = 0; j < n; j++)//找到对应的学生
+//			{
+//				if (arr_chinese[i] == arr2[j].chinese)
+//				{
+//					printf("%ld %s\n", arr2[j].id, arr2[j].name);
+//					arr2[j].chinese = -1;//将该学生的成绩变为-1，防止重复输出
+//					break;
+//				}
+//			}
+//		}
+//	}
+//	else if (choice == 3)//按照英语成绩排名
+//	{
+//		double arr_english[101] = { 0 };
+//		for (i = 0; i < n; i++)
+//		{
+//			arr_english[i] = arr2[i].english;
+//		}
+//		bubbleSort_double(arr_english, n);
+//		for (i = 0; i < n; i++)
+//		{
+//			for (j = 0; j < n; j++)//找到对应的学生
+//			{
+//				if (arr_english[i] == arr2[j].english)
+//				{
+//					printf("%ld %s\n", arr2[j].id, arr2[j].name);
+//					arr2[j].english = -1;//将该学生的成绩变为-1，防止重复输出
+//					break;
+//				}
+//			}
+//		}
+//	}
+//	
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+////version2
+//void bubbleSort_double(double arr[], int len) {
+//    int i, j;
+//    for (i = 0; i < len - 1; i++) {
+//        for (j = 0; j < len - 1 - i; j++) {
+//            if (arr[j] < arr[j + 1]) {
+//                double tmp = arr[j];
+//                arr[j] = arr[j + 1];
+//                arr[j + 1] = tmp;
+//            }
+//        }
+//    }
+//}
+//
+//struct Student {
+//    char id[35];
+//    char name[35];
+//    double math;
+//    double chinese;
+//    double english;
+//};
+//
+//int main() 
+//{
+//    int n;
+//    scanf("%d", &n);
+//
+//    struct Student arr[101];
+//    int outputStatus[101] = { 0 }; // 0表示未输出，1表示已输出
+//
+//    for (int i = 0; i < n; i++) 
+//    {
+//        scanf("%s %s %lf %lf %lf", arr[i].id, arr[i].name, &arr[i].math, &arr[i].chinese, &arr[i].english);
+//    }
+//
+//    int choice;
+//    scanf("%d", &choice);
+//
+//    if (choice < 1 || choice > 3) 
+//    {
+//        printf("ERROR\n");
+//        return 1;
+//    }
+//
+//    double scores[101];
+//    for (int i = 0; i < n; i++) 
+//    {
+//        if (choice == 1) 
+//        {
+//            scores[i] = arr[i].math;
+//        }
+//        else if (choice == 2) 
+//        {
+//            scores[i] = arr[i].chinese;
+//        }
+//        else if (choice == 3) 
+//        {
+//            scores[i] = arr[i].english;
+//        }
+//    }
+//
+//    bubbleSort_double(scores, n);
+//
+//    for (int i = 0; i < n; i++) 
+//    {
+//        for (int j = 0; j < n; j++) 
+//        {
+//            if (scores[i] == arr[j].math && choice == 1) 
+//            {
+//                if (outputStatus[j] == 0) 
+//                {
+//                    printf("%s %s\n", arr[j].id, arr[j].name);
+//                    outputStatus[j] = 1;
+//                }
+//            }
+//            else if (scores[i] == arr[j].chinese && choice == 2)
+//            {
+//                if (outputStatus[j] == 0)
+//                {
+//                    printf("%s %s\n", arr[j].id, arr[j].name);
+//                    outputStatus[j] = 1;
+//                }
+//            }
+//            else if (scores[i] == arr[j].english && choice == 3) 
+//            {
+//                if (outputStatus[j] == 0) 
+//                {
+//                    printf("%s %s\n", arr[j].id, arr[j].name);
+//                    outputStatus[j] = 1;
+//                }
+//            }
+//        }
+//    }
+//
+//    return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+////version3
+//void bubbleSort_double(double arr[], int len) {
+//    int i, j;
+//    for (i = 0; i < len - 1; i++) {
+//        for (j = 0; j < len - 1 - i; j++) {
+//            if (arr[j] < arr[j + 1]) {
+//                double tmp = arr[j];
+//                arr[j] = arr[j + 1];
+//                arr[j + 1] = tmp;
+//            }
+//        }
+//    }
+//}
+//
+//struct Student {
+//    char id[35];
+//    char name[35];
+//    double math;
+//    double chinese;
+//    double english;
+//};
+//
+//int main() {
+//    int n;
+//    scanf("%d", &n);
+//
+//    struct Student arr[101];
+//
+//    for (int i = 0; i < n; i++) {
+//        scanf("%s %s %lf %lf %lf", arr[i].id, arr[i].name, &arr[i].math, &arr[i].chinese, &arr[i].english);
+//    }
+//
+//    int choice;
+//    scanf("%d", &choice);
+//
+//    if (choice < 1 || choice > 3) {
+//        printf("ERROR\n");
+//        return 1;
+//    }
+//
+//    double scores[101];
+//    for (int i = 0; i < n; i++) {
+//        if (choice == 1) {
+//            scores[i] = arr[i].math;
+//        }
+//        else if (choice == 2) {
+//            scores[i] = arr[i].chinese;
+//        }
+//        else if (choice == 3) {
+//            scores[i] = arr[i].english;
+//        }
+//    }
+//
+//    bubbleSort_double(scores, n);
+//
+//    for (int i = 0; i < n; i++) {
+//        for (int j = 0; j < n; j++) {
+//            if (scores[i] == arr[j].math && choice == 1) {
+//                printf("%s %s\n", arr[j].id, arr[j].name);
+//                arr[j].math = -1; // 将该学生的成绩标记为-1，防止重复输出
+//                break;
+//            }
+//            else if (scores[i] == arr[j].chinese && choice == 2) {
+//                printf("%s %s\n", arr[j].id, arr[j].name);
+//                arr[j].chinese = -1; // 将该学生的成绩标记为-1，防止重复输出
+//                break;
+//            }
+//            else if (scores[i] == arr[j].english && choice == 3) {
+//                printf("%s %s\n", arr[j].id, arr[j].name);
+//                arr[j].english = -1; // 将该学生的成绩标记为-1，防止重复输出
+//                break;
+//            }
+//        }
+//    }
+//
+//    return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+////version4_error
+//void bubbleSort_double(double arr[], int len, int indexes[]) {
+//    int i, j;
+//    for (i = 0; i < len - 1; i++) {
+//        for (j = 0; j < len - 1 - i; j++) {
+//            if (arr[j] < arr[j + 1] || (arr[j] == arr[j + 1] && strcmp((char)arr[indexes[j]], (char)arr[indexes[j + 1]]) > 0)) {
+//                double tmp = arr[j];
+//                arr[j] = arr[j + 1];
+//                arr[j + 1] = tmp;
+//                int tmpIndex = indexes[j];
+//                indexes[j] = indexes[j + 1];
+//                indexes[j + 1] = tmpIndex;
+//            }
+//        }
+//    }
+//}
+//
+//struct Student {
+//    char id[35];
+//    char name[35];
+//    double math;
+//    double chinese;
+//    double english;
+//};
+//
+//int main() {
+//    int n;
+//    scanf("%d", &n);
+//
+//    struct Student arr[101];
+//    int outputStatus[101] = { 0 }; // 0表示未输出，1表示已输出
+//
+//    for (int i = 0; i < n; i++) {
+//        scanf("%s %s %lf %lf %lf", arr[i].id, arr[i].name, &arr[i].math, &arr[i].chinese, &arr[i].english);
+//    }
+//
+//    int choice;
+//    scanf("%d", &choice);
+//
+//    if (choice < 1 || choice > 3) {
+//        printf("ERROR\n");
+//        return 1;
+//    }
+//
+//    double scores[101];
+//    for (int i = 0; i < n; i++) {
+//        if (choice == 1) {
+//            scores[i] = arr[i].math;
+//        }
+//        else if (choice == 2) {
+//            scores[i] = arr[i].chinese;
+//        }
+//        else if (choice == 3) {
+//            scores[i] = arr[i].english;
+//        }
+//    }
+//
+//    int indexes[101];
+//    for (int i = 0; i < n; i++) {
+//        indexes[i] = i;
+//    }
+//
+//    bubbleSort_double(scores, n, indexes);
+//
+//    for (int i = 0; i < n; i++) {
+//        if (outputStatus[indexes[i]] == 0) {
+//            printf("%s %s\n", arr[indexes[i]].id, arr[indexes[i]].name);
+//            outputStatus[indexes[i]] = 1;
+//        }
+//    }
+//
+//    return 0;
+//}
+
+//#include <stdio.h>
+//
+//void bubbleSort_double(double arr[], int len, int indexes[]) {
+//    int i, j;
+//    for (i = 0; i < len - 1; i++) {
+//        for (j = 0; j < len - 1 - i; j++) {
+//            if (arr[j] < arr[j + 1] || (arr[j] == arr[j + 1] && indexes[j] > indexes[j + 1])) {
+//                double tmp = arr[j];
+//                arr[j] = arr[j + 1];
+//                arr[j + 1] = tmp;
+//                int tmpIndex = indexes[j];
+//                indexes[j] = indexes[j + 1];
+//                indexes[j + 1] = tmpIndex;
+//            }
+//        }
+//    }
+//}
+//
+//struct Student {
+//    long long id;  // 学号类型改为 long long
+//    char name[35];
+//    double math;
+//    double chinese;
+//    double english;
+//};
+//
+//int main() {
+//    int n;
+//    scanf("%d", &n);
+//
+//    struct Student arr[101];
+//    int outputStatus[101] = { 0 }; // 0表示未输出，1表示已输出
+//
+//    for (int i = 0; i < n; i++) {
+//        scanf("%lld %s %lf %lf %lf", &arr[i].id, arr[i].name, &arr[i].math, &arr[i].chinese, &arr[i].english);
+//    }
+//
+//    int choice;
+//    scanf("%d", &choice);
+//
+//    if (choice < 1 || choice > 3) {
+//        printf("ERROR\n");
+//        return 1;
+//    }
+//
+//    int indexes[101];
+//    for (int i = 0; i < n; i++) {
+//        indexes[i] = i;
+//    }
+//
+//    bubbleSort_double(indexes, n, indexes); // 首先按学号排序
+//
+//    double scores[101];
+//    for (int i = 0; i < n; i++) {
+//        if (choice == 1) {
+//            scores[i] = arr[indexes[i]].math;
+//        }
+//        else if (choice == 2) {
+//            scores[i] = arr[indexes[i]].chinese;
+//        }
+//        else if (choice == 3) {
+//            scores[i] = arr[indexes[i]].english;
+//        }
+//    }
+//
+//    bubbleSort_double(scores, n, indexes); // 然后按照成绩排序
+//
+//    for (int i = 0; i < n; i++) {
+//        if (outputStatus[indexes[i]] == 0) {
+//            printf("%lld %s\n", arr[indexes[i]].id, arr[indexes[i]].name);
+//            outputStatus[indexes[i]] = 1;
+//        }
+//    }
+//
+//    return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+////给定一个字符串，找出其中不含有重复字符的最长子串的长度
+////version1_error
+//int getMax(int arr[], int len)
+//{
+//	int max = arr[0];
+//	for (int i = 0; i < len; i++)
+//	{
+//		if (arr[i] > max)
+//		{
+//			max = arr[i];
+//		}
+//	}
+//	return max;
+//}
+//int main()
+//{
+//	char arr[10000]={0};
+//	scanf("%s",arr);
+//	int len=strlen(arr);
+//	int i = 0, j = 0, k = 0;
+//	int max=0;
+//	int arrnum[10000] = { 0 };
+//	for (i = 0; i < len; i++)
+//	{
+//		int flag=0;
+//		for (j = i + 1; j < len; j++)
+//		{
+//			if (arr[i] == arr[j])
+//			{
+//				flag=1;
+//				arrnum[k] = j - i;
+//				k++;
+//				break;
+//			}
+//		}
+//	}
+//	printf("%d",getMax(arrnum,k));
+//
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+////version2_correct
+//int main() 
+//{
+//    char arr[10000] = { 0 };
+//    scanf("%s", arr);
+//    int len = strlen(arr);
+//    int max_length = 0;
+//    int current_length = 0;
+//    int last_index[256]; // 用于记录每个字符上次出现的位置
+//
+//    // 初始化 last_index 数组
+//    for (int i = 0; i < 256; i++)
+//    {
+//        last_index[i] = -1;
+//    }
+//
+//    int start = 0; // 当前不重复子串的起始位置
+//
+//    for (int i = 0; i < len; i++) 
+//    {
+//        int prev = last_index[arr[i]]; // 获取当前字符上次出现的位置
+//
+//        if (prev == -1 || prev < start)
+//        {
+//            current_length = i - start + 1;
+//        }
+//        else
+//        {
+//            start = prev + 1;
+//            current_length = i - start + 1;
+//        }
+//
+//        last_index[arr[i]] = i; // 更新字符的最后出现位置
+//
+//        if (current_length > max_length)
+//        {
+//            max_length = current_length;
+//        }
+//    }
+//
+//    printf("%d", max_length);
+//
+//    return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//#include<math.h>
+////实现2进制数转化为10进制数
+//int twototen(int n)
+//{
+//	int arr[100] = { 0 };
+//	int i = 0;
+//	while (n != 0)
+//	{
+//		arr[i] = n % 10;
+//		n /= 10;
+//		i++;
+//	}
+//	int sum = 0;
+//	int j = 0;
+//	for (j = 0; j < i; j++)
+//	{
+//		sum += arr[j] * pow(2, j);
+//	}
+//	return sum;
+//}
+//int tentotwo(int n)//实现10进制数转化为2进制数
+//{
+//	int arr[100] = { 0 };
+//	int i = 0;
+//	while (n != 0)
+//	{
+//		arr[i] = n % 2;
+//		n /= 2;
+//		i++;
+//	}
+//	int sum = 0;
+//	int j = 0;
+//	for (j = i - 1; j >= 0; j--)
+//	{
+//		sum = sum * 10 + arr[j];
+//	}
+//	return sum;
+//
+//}
+//int main()
+//{
+//	int n = 0, m = 0;
+//	scanf("%d%d", &n, &m);
+//	int sum=twototen(m)+twototen(n);
+//	//控制输出后四位，如果少于4位前面补0，如果多于4位只输出后四位
+//	if (tentotwo(sum) < 1000)
+//	{
+//		printf("%04d", tentotwo(sum));
+//	}
+//	else
+//	{
+//		printf("%04d", tentotwo(sum) % 10000);
+//	}
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//#include<math.h>
+////实现2进制数转化为10进制数,如果输入不是二进制数，返回-1
+//long long twototen(long long n)
+//{
+//	long long sum = 0;
+//	int i = 0;
+//	while (n != 0)
+//	{
+//		if (n % 10 != 0 && n % 10 != 1)
+//		{
+//			return -1;
+//		}
+//		sum += (n % 10) * pow(2, i);
+//		n /= 10;
+//		i++;
+//	}
+//	return sum;
+//}
+//int main()
+//{
+//	long long n;
+//	scanf("%lld", &n);
+//	if(twototen(n)==(long long)-1)
+//		printf("ERROR");
+//	else
+//		printf("%lld", twototen(n));
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//#include<math.h>
+////实现2进制数转化为10进制数,如果输入不是二进制数，输出ERROR
+//int main()
+//{
+//	//先将二进制数存入字符数组
+//	 char arr[30]= { 0 };
+//	 scanf("%s", arr);
+//	 int len = strlen(arr);
+//	 int i = 0;
+//	 int sum = 0;
+//	 for (i = 0; i < len; i++)
+//	 {
+//		 if (arr[i] != '0' && arr[i] != '1')
+//		 {
+//			 printf("ERROR");
+//			 return 0;
+//		 }
+//		 sum += (arr[i] - '0') * pow(2, len - 1 - i);
+//	 }
+//	 printf("%d", sum);
+//	 return 0;
+//}
 
