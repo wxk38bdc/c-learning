@@ -1512,3 +1512,221 @@
 //	 return 0;
 //}
 
+//#include<stdio.h>
+//#include<string.h>
+////#470元素查找
+//int bubbleSort_int(int arr[], int len)//冒泡排序_int//从小到大
+//{
+//	int i = 0, j = 0;
+//	int flag = 0;//判断输入的数组是否有序
+//	for (i = 0; i < len - 1; i++)
+//	{
+//		for (j = 0; j < len - 1 - i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				flag = 1;
+//				int tmp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tmp;
+//			}
+//		}
+//	}
+//	return flag;
+//}
+//int main()
+//{
+//	int n = 0, i = 0, j = 0;
+//	scanf("%d",&n);
+//	int arr[15] = { 0 };
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	int numberToFind = 0;
+//	scanf("%d", &numberToFind);
+//	//创造一个新的数组，将原数组中的元素存入新数组
+//	int arr_new[15] = { 0 };
+//	for (i = 0; i < n; i++)
+//	{
+//		arr_new[i] = arr[i];
+//	}
+//	bubbleSort_int(arr_new, n);
+//	//打印排序后的数组
+//	for (i = 0; i < n; i++)
+//	{
+//		printf("%d ", arr_new[i]);
+//	}
+//	printf("\n");
+//	//输出输入的元素是否有序
+//	if (bubbleSort_int(arr, n) == 0)
+//	{
+//		printf("ordered ");
+//	}
+//	else
+//	{
+//		printf("unordered ");
+//	}
+//	//判断输入的元素是否在数组中
+//	int flag = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		if (arr[i] == numberToFind)
+//		{
+//			flag = 1;
+//			printf("%d ", flag);
+//			printf("%d", i);
+//			return 0;
+//		}
+//	}
+//	printf("0 -1");
+//	return 0;
+//}
+
+//#include<stdio.h>
+////输入三角形的三条边（均为整型数据），利用勾股定理判断它是否为直角三角形。若数据无法构成三角形输出Error，构成直角三角形输出Yes，否则输出No。
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int a=0, b=0, c=0;
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d%d%d", &a, &b, &c);
+//		if (a + b > c && a + c > b && b + c > a)
+//		{
+//			if (a * a + b * b == c * c || a * a + c * c == b * b || b * b + c * c == a * a)
+//			{
+//				printf("Yes\n");
+//			}
+//			else
+//			{
+//				printf("No\n");
+//			}
+//		}
+//		else
+//		{
+//			printf("Error\n");
+//		}
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<math.h>
+////反菱形输出
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int i = 0, j = 0;
+//	for (i = 1; i <= n; i++)
+//	{
+//		for (j = 1; j <=n; j++)
+//		{
+//			if(i+j>=2+(n+1)/2 && i + j <= (3*n-1)/2 && i - j <= (n+1)/2-2 && j - i <= (n+1)/2-2)
+//				printf(" ");
+//			else
+//				printf("*");
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+////可莉打丘丘人
+//int main()
+//{
+//	int A, H, n;//A为可莉的攻击力，H为可莉的血量，n为丘丘人的数量
+//	scanf("%d%d%d", &A, &H, &n);
+//	int A_I[100] = { 0 };//A_I为丘丘人的攻击力
+//	int H_I[100] = { 0 };//H_I为丘丘人的血量
+//	int i = 0, j = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d", &A_I[i]);
+//	}
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d", &H_I[i]);
+//	}
+//	i = 0, j = 0;
+//	while (1)
+//	{
+//		H -= A_I[j];
+//		H_I[j] -= A;
+//		if (H_I[j] < 1)
+//		{
+//			j++;
+//		}
+//		if(H<1&&j<n)
+//		{
+//			printf("NO");
+//			return 0;
+//		}
+//		if (j == n)
+//		{
+//			printf("YES");
+//			return 0;
+//		}
+//	}
+//}
+
+
+//记得提交代码！
+#include<stdio.h>
+//#471回文时间点
+int isPalindrome(int a,int b)
+{
+	int arr_a[2] = { 0 };
+	int arr_b[2] = { 0 };
+	int i = 0;
+	while (a != 0)
+	{
+		arr_a[i] = a % 10;
+		a /= 10;
+		i++;
+	}
+	int j = 0;
+	while (b != 0)
+	{
+		arr_b[j] = b % 10;
+		b /= 10;
+		j++;
+	}
+	if (arr_a[0] == arr_b[1] && arr_a[1] == arr_b[0])
+		return 1;
+	else
+		return 0;
+}
+int main()
+{
+	int n = 0, i = 0, j = 0;
+	scanf("%d", &n);
+	while (n--)
+	{
+		int hour = 0, minute = 0;
+		scanf("%d:%d", &hour, &minute);
+		while (1)
+		{
+			minute++;
+			if (minute == 60)
+			{
+				hour++;
+				minute = 0;
+			}
+			if (hour == 24)
+			{
+				hour = 0;
+			}
+			if (isPalindrome(hour, minute))
+			{
+				printf("%02d:%02d\n", hour, minute);
+				break;
+			}
+		}
+	}
+	return 0;
+}
