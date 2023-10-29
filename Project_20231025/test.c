@@ -1674,59 +1674,117 @@
 //	}
 //}
 
+//#include<stdio.h>
+////#471回文时间点
+//int isPalindrome(int a,int b)
+//{
+//	int arr_a[2] = { 0 };
+//	int arr_b[2] = { 0 };
+//	int i = 0;
+//	while (a != 0)
+//	{
+//		arr_a[i] = a % 10;
+//		a /= 10;
+//		i++;
+//	}
+//	int j = 0;
+//	while (b != 0)
+//	{
+//		arr_b[j] = b % 10;
+//		b /= 10;
+//		j++;
+//	}
+//	if (arr_a[0] == arr_b[1] && arr_a[1] == arr_b[0])
+//		return 1;
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	int n = 0, i = 0, j = 0;
+//	scanf("%d", &n);
+//	while (n--)
+//	{
+//		int hour = 0, minute = 0;
+//		scanf("%d:%d", &hour, &minute);
+//		while (1)
+//		{
+//			minute++;
+//			if (minute == 60)
+//			{
+//				hour++;
+//				minute = 0;
+//			}
+//			if (hour == 24)
+//			{
+//				hour = 0;
+//			}
+//			if (isPalindrome(hour, minute))
+//			{
+//				printf("%02d:%02d\n", hour, minute);
+//				break;
+//			}
+//		}
+//	}
+//	return 0;
+//}
 
-//记得提交代码！
+//#include<stdio.h>
+////奇偶数分开输出
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int i = 0;
+//	int num = 0;
+//	while (n--)
+//	{
+//		scanf("%d", &num);
+//		for (i = 1; i < num; i += 2)
+//		{
+//			printf("%d ", i);
+//		}
+//		printf("\n");
+//		for (i = 2; i <= num; i += 2)
+//		{
+//			printf("%d ", i);
+//		}
+//		printf("\n\n");
+//	}
+//	return 0;
+//}
+
 #include<stdio.h>
-//#471回文时间点
-int isPalindrome(int a,int b)
-{
-	int arr_a[2] = { 0 };
-	int arr_b[2] = { 0 };
-	int i = 0;
-	while (a != 0)
-	{
-		arr_a[i] = a % 10;
-		a /= 10;
-		i++;
-	}
-	int j = 0;
-	while (b != 0)
-	{
-		arr_b[j] = b % 10;
-		b /= 10;
-		j++;
-	}
-	if (arr_a[0] == arr_b[1] && arr_a[1] == arr_b[0])
-		return 1;
-	else
-		return 0;
-}
+#include<string.h>
+//将姓名按照字典序由小到大排列后输出。每个姓名输出一行。
 int main()
 {
-	int n = 0, i = 0, j = 0;
+	char arr[50][50] = { 0 };
+	int n = 0;
 	scanf("%d", &n);
-	while (n--)
+	int i = 0;
+	for (i = 0; i < n; i++)
 	{
-		int hour = 0, minute = 0;
-		scanf("%d:%d", &hour, &minute);
-		while (1)
+		scanf("%s", arr[i]);
+	}
+	int j = 0;
+	//冒泡排序
+	for (i = 0; i < n - 1; i++)
+	{
+		for (j = 0; j < n - 1 - i; j++)
 		{
-			minute++;
-			if (minute == 60)
+			if (strcmp(arr[j], arr[j + 1]) > 0)
 			{
-				hour++;
-				minute = 0;
-			}
-			if (hour == 24)
-			{
-				hour = 0;
-			}
-			if (isPalindrome(hour, minute))
-			{
-				printf("%02d:%02d\n", hour, minute);
-				break;
+				char tmp[50] = { 0 };
+				strcpy(tmp, arr[j]);
+				strcpy(arr[j], arr[j + 1]);
+				strcpy(arr[j + 1], tmp);
 			}
 		}
+	}
+	for (i = 0; i < n; i++)
+	{
+		printf("%s\n", arr[i]);
 	}
 	return 0;
 }
