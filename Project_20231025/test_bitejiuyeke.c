@@ -128,3 +128,67 @@
 //	
 //	return 0;
 //}
+
+//#include<stdio.h>
+//void test()
+//{
+//	static int a = 1;
+//	a++;
+//	printf("%d\n", a);
+//}
+//int main()
+//{
+//	int i = 0;
+//	for(i=0; i < 10; i++)
+//	{
+//		test();
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+////二分查找
+//int bin_search(int arr[], int left, int right, int k)
+//{
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (arr[mid] < k)
+//		{
+//			left = mid + 1;
+//		}
+//		else if (arr[mid] > k)
+//		{
+//			right = mid - 1;
+//		}
+//		else
+//		{
+//			return mid;
+//		}
+//	}
+//	return -1;
+//}
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int tofind = 0;
+//	printf("请输入要查找的数字：\n");
+//	scanf("%d", &tofind);
+//	int ret = bin_search(arr, 0, 9, tofind);
+//	if(ret==-1)
+//	{
+//		printf("找不到\n");
+//	}
+//	else
+//	{
+//		printf("找到了，下标是：%d\n", ret);
+//	}
+//	return 0;
+//}
+
+#include<stdio.h>
+int main()
+{
+	printf("\033[32;?25hmHelloWorld\r\n");
+	return 0;
+}
