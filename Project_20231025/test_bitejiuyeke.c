@@ -186,9 +186,9 @@
 //	return 0;
 //}
 
-#include<stdio.h>
-int main()
-{
-	printf("\033[32;?25hmHelloWorld\r\n");
-	return 0;
-}
+//#include<stdio.h>
+//int main()
+//{
+//	printf("\033[32;?25hmHelloWorld\r\n");
+//	return 0;
+//}

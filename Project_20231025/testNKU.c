@@ -1817,8 +1817,196 @@
 
 //#include<stdio.h>
 //#include<string.h>
+//void reverse(char arr[], int len)//将整个字符串逆序
+//{
+//	int left= 0, right = len - 1;
+//	while (left <=right)
+//	{
+//		char tmp = arr[left];
+//		arr[left] = arr[right];
+//		arr[right] = tmp;
+//		left++;
+//		right--;
+//	}
+//}
 //int main()
 //{
-//
+//	char arr[100] = { 0 };
+//	while (scanf(" %[^\n]", arr) != EOF)
+//	{
+//		if (strcmp(arr, "END") == 0)
+//		{
+//			break;
+//		}
+//		int len = strlen(arr);
+//		if (len >= 50)
+//		{
+//			printf("OUT\n");
+//			continue;
+//		}
+//		reverse(arr, len);//将整个字符串逆序
+//		//将逆序后的字符串去重
+//		char arr_new[100] = { 0 };
+//		int i = 0, j = 0, k = 0;
+//		for (i = 0; i < len; i++)
+//		{
+//			int flag = 0;
+//			for (j = 0; j < i; j++)
+//			{
+//				if (arr[i] == arr[j])
+//				{
+//					flag = 1;
+//					break;
+//				}
+//			}
+//			if (flag == 0)
+//			{
+//				arr_new[k] = arr[i];
+//				k++;
+//			}
+//		}
+//		printf("%s\n", arr_new);
+//	}
 //	return 0;
 //}
+
+//#include<stdio.h>
+//#include<string.h>
+////删除字符串中的数字，小写变大写，大写变小写
+//int main()
+//{
+//	char arr[60];
+//	scanf("%s", arr);
+//	int len = strlen(arr);
+//	char arr_new[60] = { 0 };
+//	int i = 0, j = 0;
+//	for (i = 0; i < len; i++)
+//	{
+//		if (arr[i] >= '0' && arr[i] <= '9')
+//		{
+//			continue;
+//		}
+//		else if (arr[i] >= 'a' && arr[i] <= 'z')
+//		{
+//			arr_new[j] = arr[i] - 32;
+//			j++;
+//		}
+//		else if (arr[i] >= 'A' && arr[i] <= 'Z')
+//		{
+//			arr_new[j] = arr[i] + 32;
+//			j++;
+//		}
+//	}
+//	printf("%s", arr_new);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+////输入一个由大小写字母及数字组成的字符串。将字符串中连续的数字翻转。输出该字符串。
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	scanf("%s", arr);
+//	int len = strlen(arr);
+//	int i = 0, j = 0;
+//	for (i = 0; i < len; i++)
+//	{
+//		int flag = 0, left = 0;
+//		if (arr[i] >= '0' && arr[i] <= '9')
+//		{
+//			flag = 1;
+//			left = i;
+//			for (j = i + 1; j < len; j++)
+//			{
+//				if (arr[j] >= '0' && arr[j] <= '9')
+//				{
+//					continue;
+//				}
+//				else
+//				{
+//					break;
+//				}
+//			}
+//			i = j;
+//		}
+//		if (flag == 1)
+//		{
+//			int right = i - 1;
+//			while (left <= right)
+//			{
+//				char tmp = arr[left];
+//				arr[left] = arr[right];
+//				arr[right] = tmp;
+//				left++;
+//				right--;
+//			}
+//		}
+//	}
+//	printf("%s", arr);
+//	return 0;
+//}
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char arr[100] = { 0 };
+	scanf("%s", arr);
+	int len = strlen(arr);
+	int i = 0, j = 0;
+	for (i = 0; i < len; i++)
+	{
+		int flag = 0, left = 0;
+		if (arr[i] >= '0' && arr[i] <= '9')
+		{
+			flag = 1;
+			left = i;
+			for (j = i + 1; j < len; j++)
+			{
+				if (arr[j] >= '0' && arr[j] <= '9')
+				{
+					continue;
+				}
+				else
+				{
+					break;
+				}
+			}
+			i = j;
+		}
+		if (flag == 1)
+		{
+			int right = i - 1;
+			while (left <= right)
+			{
+				char tmp = arr[left];
+				arr[left] = arr[right];
+				arr[right] = tmp;
+				left++;
+				right--;
+			}
+		}
+	}
+	for (i = 0; i < len; i++)
+	{
+		if (arr[i] >= 'A' && arr[i] <= 'Z')
+		{
+			printf("%c", arr[i] + 32);
+		}
+		else if(arr[i] >= 'a' && arr[i] <= 'z')
+		{
+			printf("%c", arr[i] - 32);
+		}
+		else if(arr[i]>= '0' && arr[i] <= '9')
+		{
+			printf("%c", arr[i]);
+		}
+		else
+		{
+			printf("%c", arr[i]);
+			printf("%c", arr[i]);
+		}
+	}
+	return 0;
+}
