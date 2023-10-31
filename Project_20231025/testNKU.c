@@ -1947,66 +1947,303 @@
 //	return 0;
 //}
 
+//#include<stdio.h>
+//#include<string.h>
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	scanf("%s", arr);
+//	int len = strlen(arr);
+//	int i = 0, j = 0;
+//	for (i = 0; i < len; i++)
+//	{
+//		int flag = 0, left = 0;
+//		if (arr[i] >= '0' && arr[i] <= '9')
+//		{
+//			flag = 1;
+//			left = i;
+//			for (j = i + 1; j < len; j++)
+//			{
+//				if (arr[j] >= '0' && arr[j] <= '9')
+//				{
+//					continue;
+//				}
+//				else
+//				{
+//					break;
+//				}
+//			}
+//			i = j;
+//		}
+//		if (flag == 1)
+//		{
+//			int right = i - 1;
+//			while (left <= right)
+//			{
+//				char tmp = arr[left];
+//				arr[left] = arr[right];
+//				arr[right] = tmp;
+//				left++;
+//				right--;
+//			}
+//		}
+//	}
+//	for (i = 0; i < len; i++)
+//	{
+//		if (arr[i] >= 'A' && arr[i] <= 'Z')
+//		{
+//			printf("%c", arr[i] + 32);
+//		}
+//		else if(arr[i] >= 'a' && arr[i] <= 'z')
+//		{
+//			printf("%c", arr[i] - 32);
+//		}
+//		else if(arr[i]>= '0' && arr[i] <= '9')
+//		{
+//			printf("%c", arr[i]);
+//		}
+//		else
+//		{
+//			printf("%c", arr[i]);
+//			printf("%c", arr[i]);
+//		}
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//	char arr1[5002];//被查字符串
+//	char arr2[5002];//查找字符串
+//	scanf("%s", arr1);
+//	scanf("%s", arr2);
+//	char arr3[5002] = { 0 };//输出字符串
+//	int i = 0, j = 0, k = 0;
+//	int sz1 = 0, sz2 = 0;//记录字符串1,2长度
+//	while (arr1[sz1] != '\0')
+//	{
+//		sz1++;
+//	}
+//	while (arr2[sz2] != '\0')
+//	{
+//		sz2++;
+//	}
+//	//在arr1中查找arr2并将arr1中的arr2删除后存入arr3
+//	for (i = 0; i < sz1; i++)
+//	{
+//		int flag = 0;
+//		for (j = 0; j < sz2; j++)
+//		{
+//			if (arr1[i + j] != arr2[j])
+//			{
+//				flag = 1;
+//				break;
+//			}
+//		}
+//		if (flag == 0)
+//		{
+//			i += sz2 - 1;
+//		}
+//		else
+//		{
+//			arr3[k] = arr1[i];
+//			k++;
+//		}
+//	}
+//	printf("%s", arr3);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//int main()
+//{
+//	char arr[15];
+//	scanf("%s", arr);
+//	int n = 0;
+//	int len = strlen(arr);
+//	scanf("%d", &n);
+//	while (n--)
+//	{
+//		char func[10];
+//		scanf("%s", func);
+//		if (strcmp(func, "i") == 0)
+//		{
+//			int pos = 0;
+//			scanf("%d", &pos);//插入位置
+//			char str[2];
+//			scanf("%s", str);//插入的字符串
+//			int i = 0, j = 0;
+//			if (pos >= 0 && pos <= len)
+//			{
+//				for (i = 0; i < pos; i++)
+//				{
+//					printf("%c", arr[i]);
+//				}
+//				printf("%s", str);
+//				for (j = pos; j < len; j++)
+//				{
+//					printf("%c", arr[j]);
+//				}
+//			}
+//			else
+//			{
+//				printf("%s%s", arr, str);
+//			}
+//			printf("\n");
+//		}
+//		else if (strcmp(func, "d") == 0)
+//		{
+//			int pos = 0;
+//			scanf("%d", &pos);//删除位置
+//			if (pos >= 0 && pos <= len)
+//			{
+//				int i = 0;
+//				for (i = 0; i < len; i++)
+//				{
+//					if (i == pos - 1)
+//					{
+//						continue;
+//					}
+//					printf("%c", arr[i]);
+//				}
+//			}
+//			else
+//			{
+//				int i = 0;
+//				for (i = len - 1; i >= 0; i--)
+//				{
+//					printf("%c", arr[i]);
+//				}
+//			}
+//			printf("\n");
+//		}
+//		else if (strcmp(func, "r") == 0)
+//		{
+//			int pos;
+//			scanf("%d", &pos);//替换位置
+//			char str[2];
+//			scanf("%s", str);//替换的字符串
+//			if (pos >= 0 && pos <= len)
+//			{
+//				int i = 0;
+//				for (i = 0; i < len; i++)
+//				{
+//					if (i == pos - 1)
+//					{
+//						printf("%s", str);
+//						continue;
+//					}
+//					printf("%c", arr[i]);
+//				}
+//			}
+//			else
+//			{
+//				int i = 0;
+//				for (i = len - 1; i >= 0; i--)
+//				{
+//					printf("%c", arr[i]);
+//				}
+//			}
+//			printf("\n");
+//		}
+//		else
+//		{
+//			int i = 0;
+//			for (i = len - 1; i >= 0; i--)
+//			{
+//				printf("%c", arr[i]);
+//			}
+//			printf("\n");
+//		}
+//	}
+//		return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+////判断字符串是否可以由同一个子串重复多次得到
+//int main()
+//{
+//	char arr[1005] = { 0 };
+//	scanf("%s", arr);
+//	int i = 0, j = 0;
+//	int len = strlen(arr);
+//	for (i = 0; i <len; i++)
+//	{
+//		int flag = 0;
+//		for (j = i + 1; j < len; j++)
+//		{
+//			if (arr[i] == arr[j])
+//			{
+//				flag = 1;
+//				break;
+//			}
+//		}
+//		if (len % (j - i) != 0)
+//		{
+//			flag = 0;
+//			continue;
+//		}
+//		if (flag == 1)
+//		{
+//			int k = 0;
+//			for (k = 0; k < len; k++)
+//			{
+//				if (arr[k] != arr[k % (j - i) + i])
+//				{
+//					flag = 0;
+//					break;
+//				}
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			printf("true");
+//			return 0;
+//		}
+//	}
+//	printf("false");
+//	return 0;
+//}
+
 #include<stdio.h>
 #include<string.h>
+//判断字符串是否可以由同一个子串重复多次得到
 int main()
 {
-	char arr[100] = { 0 };
+	char arr[1005] = { 0 };
 	scanf("%s", arr);
+	int i = 0, j = 0, k = 0;
 	int len = strlen(arr);
-	int i = 0, j = 0;
-	for (i = 0; i < len; i++)
+	int flag = 0;
+	for (i = 1; i < len; i++)
 	{
-		int flag = 0, left = 0;
-		if (arr[i] >= '0' && arr[i] <= '9')
+		flag = 0;
+		char arr_new[1005] = { 0 };
+		for (j = 0; j < i; j++)
 		{
-			flag = 1;
-			left = i;
-			for (j = i + 1; j < len; j++)
-			{
-				if (arr[j] >= '0' && arr[j] <= '9')
-				{
-					continue;
-				}
-				else
-				{
-					break;
-				}
-			}
-			i = j;
+			arr_new[j] = arr[j];
 		}
-		if (flag == 1)
+		if (len % i != 0)
 		{
-			int right = i - 1;
-			while (left <= right)
+			continue;
+		}
+		for (k = 0; k < len; k++)
+		{
+			if (arr[k] != arr_new[k % i])
 			{
-				char tmp = arr[left];
-				arr[left] = arr[right];
-				arr[right] = tmp;
-				left++;
-				right--;
+				break;
 			}
+			flag++;
+		}
+		if (flag == len)
+		{
+			printf("true");
+			return 0;
 		}
 	}
-	for (i = 0; i < len; i++)
-	{
-		if (arr[i] >= 'A' && arr[i] <= 'Z')
-		{
-			printf("%c", arr[i] + 32);
-		}
-		else if(arr[i] >= 'a' && arr[i] <= 'z')
-		{
-			printf("%c", arr[i] - 32);
-		}
-		else if(arr[i]>= '0' && arr[i] <= '9')
-		{
-			printf("%c", arr[i]);
-		}
-		else
-		{
-			printf("%c", arr[i]);
-			printf("%c", arr[i]);
-		}
-	}
+	printf("false");
 	return 0;
 }
