@@ -2208,42 +2208,245 @@
 //	return 0;
 //}
 
-#include<stdio.h>
-#include<string.h>
-//判断字符串是否可以由同一个子串重复多次得到
+//#include<stdio.h>
+//#include<string.h>
+////判断字符串是否可以由同一个子串重复多次得到
+//int main()
+//{
+//	char arr[1005] = { 0 };
+//	scanf("%s", arr);
+//	int i = 0, j = 0, k = 0;
+//	int len = strlen(arr);
+//	int flag = 0;
+//	for (i = 1; i < len; i++)
+//	{
+//		flag = 0;
+//		char arr_new[1005] = { 0 };
+//		for (j = 0; j < i; j++)
+//		{
+//			arr_new[j] = arr[j];
+//		}
+//		if (len % i != 0)
+//		{
+//			continue;
+//		}
+//		for (k = 0; k < len; k++)
+//		{
+//			if (arr[k] != arr_new[k % i])
+//			{
+//				break;
+//			}
+//			flag++;
+//		}
+//		if (flag == len)
+//		{
+//			printf("true");
+//			return 0;
+//		}
+//	}
+//	printf("false");
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//void insertSort(int arr[],int sz)//插入排序
+//{
+//	int i = 0, j = 0;
+//	for (i = 1; i < sz; i++)
+//	{
+//		int tmp = arr[i];
+//		for (j = i - 1; j >= 0; j--)
+//		{
+//			if (arr[j] > tmp)
+//			{
+//				arr[j + 1] = arr[j];
+//			}
+//			else
+//			{
+//				break;
+//			}
+//		}
+//		arr[j + 1] = tmp;
+//	}
+//}
+//int main()
+//{
+//	int arr[] = { 3,6,5,8,4,7,1,2,0 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	insertSort(arr, sz);
+//	for(int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//int main()
+//{
+//	printf("hehe\n");
+//	for (int i = 0; i < 10; i++)
+//	{
+//		printf("%d ",i);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//#include<stdlib.h>
+//int main()
+//{
+//	//库函数atof
+//	char arr1[] = "132.68";
+//	double a = atof(arr1);
+//	printf("%lf\n", a);
+//	//库函数atoi
+//	char arr2[] = "132";
+//	int b = atoi(arr2);
+//	printf("%d\n", b);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	scanf("%[^\n]", arr);
+//	int len = strlen(arr);
+//	int i = 0;
+//	int flag = 0;
+//	for (i = 0; i < len; i++)
+//	{
+//		if (arr[i] != ' ')
+//		{
+//			flag = 0;
+//			printf("%c", arr[i]);
+//		}
+//		else
+//		{
+//			flag++;
+//		}
+//		if (flag == 1)
+//		{
+//			printf(" ");
+//		}
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//void test(int str[])
+//{
+//
+//}
+//int main()
+//{
+//	int arr[] = { 0,1,2,3,4,5,6,7,8,9,10,11 };
+//	test(arr);
+//	return 0;
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//    int i = 0;
+//    int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//    for (i = 0; i <= 12; i++)
+//    {
+//        arr[i] = 0;
+//        printf("hello bit\n");
+//    }
+//    return 0;
+//}
+
+//#include<stdio.h>
+////喝汽水，1瓶汽水1元，2个空瓶可以换一瓶汽水，给20元，可以喝多少汽水
+//int main()
+//{
+//	int money = 0;//钱
+//	int count = 0;//汽水数
+//	int cap = 0;//瓶盖
+//	scanf("%d", &money);
+//	count = money;
+//	cap = money;
+//	while (cap >= 2)
+//	{
+//		count += cap / 2;
+//		cap = cap / 2 + cap % 2;
+//	}
+//	printf("%d", count);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//	int i = 1, j = 1;
+//	for(i=1;i<=13;i++)
+//	{
+//		for (j = 1; j <= 13; j++)
+//		{
+//			if (i + j >= 8 && i + j <= 20 && j - i <= 6 && i - j <= 6)
+//			{
+//				printf("*");
+//			}
+//			else
+//			{
+//				printf(" ");
+//			}
+//		}
+//		printf("\n");
+//	}
+//}
+
+//#include <stdio.h>
+//#include <math.h>
+//int main()
+//{
+//    int num;
+//    for (num = 0; num <= 100000; num++)
+//    {
+//        int n = num;
+//        int sum = 0;
+//        int digit = 0;
+//        while (n > 0) 
+//        {
+//            n /= 10;
+//            digit++;
+//        }
+//        n = num;
+//        while (n > 0) 
+//        {
+//            int remainder = n % 10;
+//            sum += pow(remainder, digit);
+//            n /= 10;
+//        }
+//        if (sum == num) 
+//        {
+//            printf("%d\n", num);
+//        }
+//    }
+//    return 0;
+//}
+
+#include <stdio.h>
+#include <math.h>
 int main()
 {
-	char arr[1005] = { 0 };
-	scanf("%s", arr);
-	int i = 0, j = 0, k = 0;
-	int len = strlen(arr);
-	int flag = 0;
-	for (i = 1; i < len; i++)
+	int a;
+	scanf("%d", &a);
+	int tmp = a;
+	int sum = a;
+	for (int i = 1; i < 5; i++)
 	{
-		flag = 0;
-		char arr_new[1005] = { 0 };
-		for (j = 0; j < i; j++)
-		{
-			arr_new[j] = arr[j];
-		}
-		if (len % i != 0)
-		{
-			continue;
-		}
-		for (k = 0; k < len; k++)
-		{
-			if (arr[k] != arr_new[k % i])
-			{
-				break;
-			}
-			flag++;
-		}
-		if (flag == len)
-		{
-			printf("true");
-			return 0;
-		}
+		a = a * 10 + tmp;
+		sum += a;
 	}
-	printf("false");
+	printf("%d", sum);
 	return 0;
 }
