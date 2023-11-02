@@ -2434,19 +2434,374 @@
 //    return 0;
 //}
 
+//#include <stdio.h>
+//#include <math.h>
+//int main()
+//{
+//	int a;
+//	scanf("%d", &a);
+//	int tmp = a;
+//	int sum = a;
+//	for (int i = 1; i < 5; i++)
+//	{
+//		a = a * 10 + tmp;
+//		sum += a;
+//	}
+//	printf("%d", sum);
+//	return 0;
+//}
+//
+//#include <stdio.h>
+//#include <math.h>
+//int main()
+//{
+//	float x1, root, croot, a = 8.0;
+//	croot = a;
+//	do {
+//		root = croot;
+//		croot=(2*root+a/(root * root)) / 3;
+//	} while (fabs(croot - root) >= 1E-5);
+//	x1= croot;
+//	printf("%f", x1);
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+////查找str2在str1中第一次出现的位置
+//int main()
+//{
+//	char str1[110];
+//	char str2[110];
+//	scanf("%s %s", str1, str2);
+//	int len1 = strlen(str1);
+//	int len2 = strlen(str2);
+//	int i = 0, j = 0;
+//	int flag = 0;
+//	for (i = 0; i < len1; i++)
+//	{
+//		flag = 0;
+//		if (str1[i] == str2[0])
+//		{
+//			flag++;
+//			if (len1 - i < len2)
+//			{
+//				break;
+//			}
+//			for (j = 1; j < len2; j++)
+//			{
+//				if (str1[i + j] == str2[j])
+//				{
+//					flag++;
+//				}
+//				if (flag == len2)
+//				{
+//					str1[i] = '\0';
+//					printf("%s", str1);
+//					return 0;
+//				}
+//			}
+//		}
+//	}
+//	printf("Not found");
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char arr[1000] = { 0 };
+//	scanf("%[^\n]", arr);
+//	int i = 0;
+//	int len = strlen(arr);
+//	int count = 0;
+//	for (i = 0; i < len; i++)
+//	{
+//		if (i == 0 && arr[i] != ' ')
+//		{
+//			count++;
+//		}
+//		if (i >= 1)
+//		{
+//			if (arr[i] != ' ' && arr[i - 1] == ' ')
+//			{
+//				count++;
+//			}
+//		}
+//	}
+//	printf("%d", count);
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int i = 0, j = 0;
+//	for (i = 1; i <= n; i++)
+//	{
+//		for (j = 1; j <= i; j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//#include <stdio.h>
+//double getMax(double arr[], int n)
+//{
+//	double MAX = arr[0];
+//	for (int i = 0; i < n; i++)
+//	{
+//		if (arr[i] > MAX)
+//		{
+//			MAX = arr[i];
+//		}
+//	}
+//	return MAX;
+//}
+//int main()
+//{
+//	double arr[7];
+//	int i = 0;
+//	double sum = 0;
+//	for (i = 0; i < 7; i++)
+//	{
+//		scanf("%lf", &arr[i]);
+//		sum += arr[i];
+//	}
+//	printf("%.1lf", (sum-getMax(arr,7)) / 6.0);
+//	return 0;
+//}
+
+//#include <stdio.h>
+//
+//void printBinary(int num, int width) 
+//{
+//    char binary[36];
+//    int i;
+//    int count = 0;
+//    for (i = width - 1; i >= 0; i--) 
+//    {
+//        binary[i] = (num & 1) + '0';
+//        num >>= 1;
+//    }
+//    binary[width] = '\0';
+//    for (i = 0; i < width; i++)
+//    {
+//        printf("%c", binary[i]);
+//        count++;
+//        if (count % 4 == 0)
+//        {
+//            printf(" ");
+//        }
+//    }
+//}
+
+//int main() {
+//    int num = 42;
+//    scanf("%d", &num);
+//    printBinary(num, 32);
+//    return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+////输入一个非负整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
+//int main()
+//{
+//	char arr[100][100] = { 0 };
+//	int n = 0;
+//	scanf("%d", &n);
+//	int i = 0, j = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%s", arr[i]);
+//	}
+//	//冒泡排序
+//	for (i = 0; i < n; i++)
+//	{
+//		for (j = 0; j < n - 1 - i; j++)
+//		{
+//			char tmp1[100] = { 0 };
+//			char tmp2[100] = { 0 };
+//			strcpy(tmp1, arr[j]);//将字符串拷贝到tmp1中
+//			strcat(tmp1, arr[j + 1]);//将字符串拷贝到tmp1中
+//			strcpy(tmp2, arr[j + 1]);//将字符串拷贝到tmp2中
+//			strcat(tmp2, arr[j]);//将字符串拷贝到tmp2中
+//			if (strcmp(tmp1, tmp2) > 0)
+//			{
+//				char tmp[100] = { 0 };
+//				strcpy(tmp, arr[j]);
+//				strcpy(arr[j], arr[j + 1]);
+//				strcpy(arr[j + 1], tmp);
+//			}
+//		}
+//	}
+//	for (i = 0; i < n; i++)
+//	{
+//		printf("%s", arr[i]);
+//	}
+//	return 0;
+//}
+
+//#include <stdio.h>
+////数组左右移位
+//void leftMove(int arr[],int n,int p)
+//{
+//	int i = 0;
+//	for (i = 0; i < p; i++)
+//	{
+//		int tmp = arr[0];
+//		int j = 0;
+//		for (j = 0; j < n - 1; j++)
+//		{
+//			arr[j] = arr[j + 1];
+//		}
+//		arr[n - 1] = tmp;
+//	}
+//}
+//void rightMove(int arr[], int n, int p)
+//{
+//	int i = 0;
+//	for (i = 0; i < p; i++)
+//	{
+//		int tmp = arr[n - 1];
+//		int j = 0;
+//		for (j = n - 1; j > 0; j--)
+//		{
+//			arr[j] = arr[j - 1];
+//		}
+//		arr[0] = tmp;
+//	}
+//}
+//int main()
+//{
+//	int type = 0, p = 0, n = 0;
+//	scanf("%d %d %d", &type, &p, &n);
+//	int arr[100] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	if (type == 1)
+//	{
+//		if (p <= 0)
+//		{
+//			printf("WRONG INPUT!");
+//			return 0;
+//		}
+//		else
+//		{
+//			leftMove(arr, n, p % n);
+//			for (i = 0; i < n; i++)
+//			{
+//				printf("%d ", arr[i]);
+//			}
+//		}
+//	}
+//	else if (type == 2)
+//	{
+//		if (p <= 0)
+//		{
+//			printf("WRONG INPUT!");
+//			return 0;
+//		}
+//		else
+//		{
+//			rightMove(arr, n, p % n);
+//			for (i = 0; i < n; i++)
+//			{
+//				printf("%d ", arr[i]);
+//			}
+//		}
+//	}
+//	else
+//	{
+//		printf("WRONG INPUT!");
+//	}
+//	return 0;
+//}
+
 #include <stdio.h>
-#include <math.h>
-int main()
-{
-	int a;
-	scanf("%d", &a);
-	int tmp = a;
-	int sum = a;
-	for (int i = 1; i < 5; i++)
-	{
-		a = a * 10 + tmp;
-		sum += a;
-	}
-	printf("%d", sum);
-	return 0;
+#include <string.h>
+
+// 大整数结构
+typedef struct {
+    int digits[1000]; // 最多处理1000位
+    int length;       // 大整数的位数
+} BigInteger;
+
+// 初始化大整数
+void initialize(BigInteger* num) {
+    num->length = 0;
+    memset(num->digits, 0, sizeof(num->digits));
 }
+
+// 将字符串转换为大整数
+void parseString(BigInteger* num, const char* str) {
+    int len = strlen(str);
+    initialize(num);
+
+    for (int i = len - 1, j = 0; i >= 0; i--, j++) {
+        num->digits[j] = str[i] - '0';
+        num->length++;
+    }
+}
+
+// 大整数乘法
+void multiply(BigInteger* result, const BigInteger* a, const BigInteger* b) {
+    initialize(result);
+
+    for (int i = 0; i < a->length; i++) {
+        int carry = 0;
+        for (int j = 0; j < b->length || carry; j++) {
+            long long current = result->digits[i + j] + a->digits[i] * 1LL * (j < b->length ? b->digits[j] : 0) + carry;
+            result->digits[i + j] = current % 10;
+            carry = current / 10;
+            if (i + j >= result->length) {
+                result->length = i + j + 1;
+            }
+        }
+    }
+}
+
+// 打印大整数
+void printBigInteger(const BigInteger* num) {
+    for (int i = num->length - 1; i >= 0; i--) {
+        printf("%d", num->digits[i]);
+    }
+}
+
+int main() {
+    char a[1001];
+    int b;
+    //printf("请输入底数a：");
+    scanf("%s", a);
+    //printf("请输入指数b：");
+    scanf("%d", &b);
+
+    BigInteger base, result;
+    parseString(&base, a);
+    initialize(&result);
+    result.digits[0] = 1;
+    result.length = 1;
+
+    for (int i = 0; i < b; i++) {
+        BigInteger temp;
+        multiply(&temp, &result, &base);
+        result = temp;
+    }
+
+    //printf("a^b = ");
+    printBigInteger(&result);
+
+    return 0;
+}
+
