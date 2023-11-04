@@ -192,3 +192,214 @@
 //	printf("\033[32;?25hmHelloWorld\r\n");
 //	return 0;
 //}
+
+//#include<stdio.h>
+////int Factorial(int n)//求n的阶乘//递归方法
+////{
+////	if (n == 1 || n == 0)
+////	{
+////		return 1;
+////	}
+////	else if (n > 1)
+////	{
+////		return n * Factorial(n - 1);
+////	}
+////	else
+////	{
+////		return -1;
+////	}
+////}
+//int Factorial(int n)//迭代方法
+//{
+//	int ret = 1;
+//	if (n == 0 || n == 1)
+//	{
+//		return 1;
+//	}
+//	else if (n < 0)
+//	{
+//		return -1;
+//	}
+//	while (n >= 2)
+//	{
+//		ret*=n;
+//		n--;
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = Factorial(n);
+//	if(ret==-1)
+//	{
+//		printf("输入错误\n");
+//	}
+//	else
+//	{
+//		printf("%d的阶乘是：%d\n", n, ret);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+////用递归求n*n整数行列式的值//未完成
+//int determinant(int arr[][50], int n)
+//{
+//	if (n == 1)
+//	{
+//		return arr[0][0];
+//	}
+//	else if (n == 2)
+//	{
+//		return arr[0][0] * arr[1][1] - arr[0][1] * arr[1][0];
+//	}
+//	else
+//	{
+//		int sum = 0;//用递归求n*n整数行列式的值
+//for (int i = 0; i < n; i++)
+//		{
+//			int tmp[50][50] = { 0 };
+//			for (int j = 0; j < n - 1; j++)
+//			{
+//				for (int k = 0; k < n - 1; k++)
+//				{
+//					if (k < i)
+//					{
+//						tmp[j][k] = arr[j + 1][k];
+//					}
+//					else
+//					{
+//						tmp[j][k] = arr[j + 1][k + 1];
+//					}
+//				}
+//			}
+//			if (i % 2 == 0)
+//			{
+//				sum += arr[0][i] * determinant(tmp, n - 1);
+//			}
+//			else
+//			{
+//				sum -= arr[0][i] * determinant(tmp, n - 1);
+//			}
+//		}
+//	}
+//}
+//int main()
+//{
+//	int n;//行列式的阶数
+//	int i = 0, j = 0, k = 0;
+//	int arr[50][50];
+//	scanf("%d", &n);
+//	for (i = 0; i < n; i++)
+//	{
+//		for (j = 0; j < n; j++)
+//		{
+//			scanf("%d", &arr[i][j]);
+//		}
+//	}
+//	int ret= determinant(arr, n);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//void Print(int n)
+//{
+//	if (n > 9)
+//	{
+//		Print(n / 10);
+//	}
+//	printf("%d ", n % 10);
+//
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	Print(n);
+//	return 0;
+//}
+
+//#include<stdio.h>
+////用循环实现
+//long long fibonacci(long long n)
+//{
+//	long long a = 1;
+//	long long b = 1;
+//	long long c = 1;
+//	while (n > 2)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//}
+//////斐波那契数列
+////long long fibonacci(long long n)
+////{
+////	if (n == 1 || n == 2)
+////	{
+////		return 1;
+////	}
+////	else
+////	{
+////		return fibonacci(n - 1) + fibonacci(n - 2);
+////	}
+////}
+//int main()
+//{
+//	long long n;
+//	scanf("%lld",&n);
+//	long long ret=fibonacci(n);
+//	printf("%lld\n", ret);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int my_pow(int n, int k)
+//{
+//	if (k == 0)
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return n * my_pow(n, k - 1);
+//	}
+//}
+//int main()
+//{
+//	int n = 0, k = 0;
+//	scanf("%d %d", &n, &k);
+//	int ret=my_pow(n, k);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int digitSum(int n)
+//{
+//	if (n < 10)
+//	{
+//		return n;
+//	}
+//	else
+//	{
+//		return n % 10 + digitSum(n / 10);
+//	}
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = digitSum(n);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+#include<stdio.h>
+

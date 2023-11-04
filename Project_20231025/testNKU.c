@@ -2729,79 +2729,79 @@
 //	return 0;
 //}
 
-#include <stdio.h>
-#include <string.h>
-
-// 大整数结构
-typedef struct {
-    int digits[1000]; // 最多处理1000位
-    int length;       // 大整数的位数
-} BigInteger;
-
-// 初始化大整数
-void initialize(BigInteger* num) {
-    num->length = 0;
-    memset(num->digits, 0, sizeof(num->digits));
-}
-
-// 将字符串转换为大整数
-void parseString(BigInteger* num, const char* str) {
-    int len = strlen(str);
-    initialize(num);
-
-    for (int i = len - 1, j = 0; i >= 0; i--, j++) {
-        num->digits[j] = str[i] - '0';
-        num->length++;
-    }
-}
-
-// 大整数乘法
-void multiply(BigInteger* result, const BigInteger* a, const BigInteger* b) {
-    initialize(result);
-
-    for (int i = 0; i < a->length; i++) {
-        int carry = 0;
-        for (int j = 0; j < b->length || carry; j++) {
-            long long current = result->digits[i + j] + a->digits[i] * 1LL * (j < b->length ? b->digits[j] : 0) + carry;
-            result->digits[i + j] = current % 10;
-            carry = current / 10;
-            if (i + j >= result->length) {
-                result->length = i + j + 1;
-            }
-        }
-    }
-}
-
-// 打印大整数
-void printBigInteger(const BigInteger* num) {
-    for (int i = num->length - 1; i >= 0; i--) {
-        printf("%d", num->digits[i]);
-    }
-}
-
-int main() {
-    char a[1001];
-    int b;
-    //printf("请输入底数a：");
-    scanf("%s", a);
-    //printf("请输入指数b：");
-    scanf("%d", &b);
-
-    BigInteger base, result;
-    parseString(&base, a);
-    initialize(&result);
-    result.digits[0] = 1;
-    result.length = 1;
-
-    for (int i = 0; i < b; i++) {
-        BigInteger temp;
-        multiply(&temp, &result, &base);
-        result = temp;
-    }
-
-    //printf("a^b = ");
-    printBigInteger(&result);
-
-    return 0;
-}
+//#include <stdio.h>
+//#include <string.h>
+//
+//// 大整数结构
+//typedef struct {
+//    int digits[1000]; // 最多处理1000位
+//    int length;       // 大整数的位数
+//} BigInteger;
+//
+//// 初始化大整数
+//void initialize(BigInteger* num) {
+//    num->length = 0;
+//    memset(num->digits, 0, sizeof(num->digits));
+//}
+//
+//// 将字符串转换为大整数
+//void parseString(BigInteger* num, const char* str) {
+//    int len = strlen(str);
+//    initialize(num);
+//
+//    for (int i = len - 1, j = 0; i >= 0; i--, j++) {
+//        num->digits[j] = str[i] - '0';
+//        num->length++;
+//    }
+//}
+//
+//// 大整数乘法
+//void multiply(BigInteger* result, const BigInteger* a, const BigInteger* b) {
+//    initialize(result);
+//
+//    for (int i = 0; i < a->length; i++) {
+//        int carry = 0;
+//        for (int j = 0; j < b->length || carry; j++) {
+//            long long current = result->digits[i + j] + a->digits[i] * 1LL * (j < b->length ? b->digits[j] : 0) + carry;
+//            result->digits[i + j] = current % 10;
+//            carry = current / 10;
+//            if (i + j >= result->length) {
+//                result->length = i + j + 1;
+//            }
+//        }
+//    }
+//}
+//
+//// 打印大整数
+//void printBigInteger(const BigInteger* num) {
+//    for (int i = num->length - 1; i >= 0; i--) {
+//        printf("%d", num->digits[i]);
+//    }
+//}
+//
+//int main() {
+//    char a[1001];
+//    int b;
+//    //printf("请输入底数a：");
+//    scanf("%s", a);
+//    //printf("请输入指数b：");
+//    scanf("%d", &b);
+//
+//    BigInteger base, result;
+//    parseString(&base, a);
+//    initialize(&result);
+//    result.digits[0] = 1;
+//    result.length = 1;
+//
+//    for (int i = 0; i < b; i++) {
+//        BigInteger temp;
+//        multiply(&temp, &result, &base);
+//        result = temp;
+//    }
+//
+//    //printf("a^b = ");
+//    printBigInteger(&result);
+//
+//    return 0;
+//}
 
