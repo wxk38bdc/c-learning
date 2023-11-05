@@ -401,5 +401,20 @@
 //	return 0;
 //}
 
-#include<stdio.h>
-
+//#include<stdio.h>
+//int add(int x, int y)
+//{
+//    return x + y;
+//}
+//
+//int multiply(int x, int y)
+//{
+//    return x * y;
+//}
+//
+//int main()
+//{
+//    int result = add(3, 2).multiply(4).add(1);
+//    printf("Result: %d\n", result);
+//    return 0;
+//}

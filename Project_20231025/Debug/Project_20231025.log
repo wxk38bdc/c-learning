@@ -1,2 +1,2 @@
 ﻿  test_bitejiuyeke.c
-  Project_20231025.vcxproj -> D:\code2023\c-learning\Project_20231025\Debug\Project_20231025.exe
+D:\code2023\c-learning\Project_20231025\test_bitejiuyeke.c(417,28): error C2224: “.multiply”的左侧必须具有结构/联合类型
